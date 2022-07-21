@@ -24,7 +24,7 @@ function draw()
   angle++;
   pop();
 
-  for (var i = 0; i < 100; i++)
+  for (var i = 0; i < 177; i++)
   {
     translate(i*13, i*-i)
     stroke(27*i)
