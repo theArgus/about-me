@@ -2,7 +2,7 @@ var angle = 0;
 
 function setup()
 {
-  canvas = createCanvas(windowWidth, 1400, WEBGL);
+  canvas = createCanvas(windowWidth, 1700, WEBGL);
   canvas.position(0,0);
   canvas.style('z-index', '-1');
   canvas.style('opacity', '0.3');
