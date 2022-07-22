@@ -27,7 +27,7 @@ function draw()
   for (var i = 0; i < 100; i++)
   {
     translate(i*13, i*-i)
-    stroke(27*i)
+    stroke(3,i,98);
     rotate(angle);
     rectMode(CENTER);
     sphere(52);
