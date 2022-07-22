@@ -5,7 +5,7 @@ function setup()
   canvas = createCanvas(windowWidth, 1700, WEBGL);
   canvas.position(0,0);
   canvas.style('z-index', '-1');
-  canvas.style('opacity', '0.5');
+  canvas.style('opacity', '0.3');
   frameRate(12);
   background(0);
   noCursor();
@@ -27,7 +27,7 @@ function draw()
   for (var i = 0; i < 177; i++)
   {
     translate(i*13, i*-i)
-    stroke(3,160,98);
+    stroke(7*i);
     rotate(angle);
     rectMode(CENTER);
     sphere(52);
