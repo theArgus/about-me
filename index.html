@@ -14,31 +14,86 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-
   <div class="container-fluid" style="margin: 33px;">
+    <div class="row" style="margin-top: 420px;">
+    </div>
     <div class="row">
-
-      <div class="col-md-3 col-md-offset-2 profile">
-        <div class="mypic table-responsive">
-          <h4><b>Noé Huerta Macías</b></h4>
-          <!-- img src="/images/1591739350.jpg" width="250px" height="250px" -->
+      <div class="form-group">
+        <div class="col-md-2">
+          <div class="form-group controls" style="margin-top: 20px; padding-right: 25px;">
+            <div class="form-group">
+              Activate the background color:
+              <input type="checkbox" onchange="getChecked()" id='check1'>
+            </div>  
+            <div class="form-group">
+              Center sphere size:
+              <input id="sizeS"  type="range" min="0" value="22" max="1000" onblur="getSizeS()" class="slider">
+            </div>
+            <div class="form-group">
+              Spheres size:
+            <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()" class="slider">            
+            </div>            
+            <div class="form-group">
+              Rotation:
+              <input id="velocity"  type="range" min="10" value="30" max="1000" onblur="getVelocity()" class="slider">
+            </div>
+            <div class="form-group">
+              Move in X the spheres:
+              <input id="transX"  type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
+            </div>       
+            <div class="form-group">
+              How many spheres in the sketch:
+              <input id="getNumberS"  type="number" min="0" value="13" max="52" onblur="getNumberS()" placeholder="13">
+            </div>
+          </div>
         </div>
-        <div class="myresume table-responsive">
-          <p style="margin-top: 15px; color: #337ab7; font-size: 21px;">IT Manager, Full Stack Developer</p>
-          <p>
-            <i class="fa fa-envelope" style="margin-right: 7px;"></i> <a href='mailto:noeh@aconsa.com.mx'>Contact me</a> <br>
-            <i class="fa fa-phone" style="margin-right: 7px;"></i> 556-103-249-2 <br>
-            <i class="fa fa-link" style="margin-right: 7px;"></i> <a href="https://www.linkedin.com/in/noe-huerta" style="cursor: pointer;"> www.linkedin.com/in/noe-huerta</a><br><br>
+        <div class="col-md-10">
+          <div class="col-md-7">
+            <div class="table-responsive" >
+              <h4 class="typewriter">Noé Huerta Macías</h4>
+              <!--img src="/about-me/images/1591739350.jpg" width="250px" height="250px"-->
+            </div>
+            <div class="myresume typewriter table-responsive">
+              <p class="typewriter" style="color: #337ab7; font-size: 21px;">IT Consultant</p>
+              <p style="margin-top: 5px;;">
+                <i class="fa fa-envelope" style="margin-right: 7px;"></i> <a href='mailto:noeh@aconsa.com.mx'>Contact me</a> <br>            
+                <i class="fa fa-link" style="margin-right: 7px;"></i> <a target="_blank" href="https://www.linkedin.com/in/noe-huerta" style="cursor: pointer;"> www.linkedin.com/in/noe-huerta</a>                
+              </p>            
+            </div>
+          </div>
+          <div class="col-md-3">
+            <p class="typewriter" style="text-align: right; font-size: small; ">
+              <b>#businessIntelligence</b><br>
+              <b>#projectLeadership</b><br>
+              <b>#agileMethodologies</b><br>
+              <b>#ERP #SaaS</b><br>
+              <b>#fullStackDev </b><br>
+              <b>#techPassionate #creativityMind</b><br>
+              <b>#engineering #technology #innovation</b><br>
+            </p>
+          </div>
+          <div class="col-md-10" style="margin-top: 2%;">
+            <!--h4 style="font-size: 33px;">Summary</h4><-->
+            <p style="text-align: justify;">
+              Hello! <br>
+              I am a Computer Engineer, I have been working since may 2021 like IT Manager. 
+              I am developer since 2015. And since I have 10 years old 
+              I have been a tech appassionate... <br>
+              In these time I have introduced
+              collaborative techs, including an ERP that I developed 2 years
+              before, working like full stack developer for the same company.
+              I am a good teamplayer, I have worked with agile methodologies
+              like Scrum and Lean for getting all the goals, not only for the
+              internal clients, also for external clients and their IT projects.
+              I hope to get new chalenges soon.
+            </p>  
+          </div>
+          </div>
+        </div>                  
+      </div>      
 
-            <b>#fullStackDev #SaaS</b><br>
-            <b>#agileMethodologies</b><br>
-            <b>#projectLeadership #ERP</b><br>
-            <b>#businessIntelligence</b><br>
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-6">
+      <div class="col-md-10 col-md-offset-2">
+        <h4 style="font-size: 33px;">Expirience</h4>
         <div class="timeline table-responsive">
             <ul class="timeline">
               <li>
@@ -78,21 +133,7 @@
       </div>
     </div>
 
-    <div class="row col-md-10 col-md-offset-2" style="margin-top: 10px;">
-      <h4 style="font-size: 33px;">Summary</h4>
-      <p>
-        I am a computer engineer, I have been working the last 15
-        months like IT manager. In these time I have introduced
-        collaborative techs, including an ERP that I developed 2 years
-        before, working like full stack developer for the same company.
-        I am a good teamplayer, I have worked with agile methodologies
-        like Scrum and Lean for getting all the goals, not only for the
-        internal clients, also for external clients and their IT projects.
-        I hope to get new chalenges soon.
-      </p>
-    </div>
-
-    <div class="row col-md-10 col-md-offset-2" style="margin-top: 30px;">
+    <div class="row col-md-10 col-md-offset-2 table-responsive" style="margin-top: 30px;">
       <h4 style="font-size: 33px;">Technical skills</h4>
       <div class="skills table-responsive" style="margin-top: 25px;">
         <div class="dashboard">
