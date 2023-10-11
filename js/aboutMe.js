@@ -68,9 +68,11 @@ function draw()
   //background(colorPicker.color());
   push();
   translate(100*getTransX(),0);
-  rotate(getVelocity());
+  rotateY(getVelocity());
+  rotateX(getVelocity());
   rectMode(CENTER);
   stroke(colorPicker.color());
+  strokeWeight(0.5);
   sphere(getSizeS());
   noFill();
   //fill(getColorS())  
