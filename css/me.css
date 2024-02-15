@@ -17,13 +17,31 @@ body{
     -ms-user-select: none;
     user-select: none;
 }
+.container-fluid {
+  padding-right: 0;
+  padding-left: 1px;
+}
+.full-container{
+  background-color: #f8f9fa;
+}
+
+.row{
+  overflow: hidden; 
+}
+
+[class*="col-"]{
+  margin-bottom: -99999px;
+ 
+  padding-bottom: 99999px;
+}
+
 ul.timeline {
     list-style-type: none;
     position: relative;
 }
 ul.timeline:before {
     content: ' ';
-    background: #d4d9df;
+    background: #f8f9fa;
     display: inline-block;
     position: absolute;
     left: 29px;
@@ -37,7 +55,7 @@ ul.timeline > li {
 }
 ul.timeline > li:before {
     content: ' ';
-    background: white;
+    background: #f8f9fa;
     display: inline-block;
     position: absolute;
     border-radius: 50%;
@@ -72,7 +90,7 @@ svg {
   fill: none;
   stroke-width: 10px;
   stroke-linecap: round;
-  transform: rotate(-90deg);
+  transform: rotate(-80deg);
   transform-origin: 50% 50%;
 
 }
@@ -155,7 +173,10 @@ svg {
   stroke: #868586;
   animation: progress-2 1s ease-out;
 }
+.table-responsive {
+  border: none !important;
 
+}
 
 @keyframes progress-1 {
     from {
@@ -183,3 +204,187 @@ svg {
     stroke-dashoffset: 250;
   }
 }
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  animation: 
+    typing 2.1s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #f8f9fa; }
+}
+
+
+
+/* Box */
+.box-container {
+  position: absolute;
+  top: 170px;
+  left: 0px;
+  width: 250px;
+  height: 500px;
+  
+  --_b: var(--b, 0);
+	width: 9.2em;
+	aspect-ratio: 1;
+	scale: calc(1 + .25*var(--_b));
+	background: color-mix(in hsl, hotpink calc(var(--_b)*100%), darkorange);
+	transition: scale .5s cubic-bezier(1, 0, 0, 1), 
+							background-color .65s ease-out;
+	animation: r 4s linear infinite;
+	animation-play-state: var(--b, paused);
+	
+	&:hover { --b: 1 }
+}
+
+.box-container2 {
+  position: absolute;
+  top: 170px;
+  left: 110px;
+  width: 200px;
+  height: 500px;
+  
+  --_b: var(--b, 0);
+	width: 7.7em;
+	aspect-ratio: 1;
+	scale: calc(1 + .25*var(--_b));
+	background: color-mix(in hsl, rgb(64, 215, 253) calc(var(--_b)*100%), rgb(94, 146, 87));
+	transition: scale .5s cubic-bezier(.32, 1.75, .68, 2), 
+							background-color .65s ease-out;
+	animation: r 4s linear infinite;
+	animation-play-state: var(--b, paused);
+	
+	&:hover { --b: 1 }
+}
+
+
+@keyframes r { to { rotate: 1turn } }
+
+.box-top {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: #fcc891;
+  clip-path: path("M 154 63 L 239 94 L 155 127 L 72 94 Z");
+}
+
+.box-left {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: #ac5c05;
+  clip-path: path("M 72 94 L 72 199 L 153 243 L 155 127 Z");
+}
+
+.box-right {
+  width: inherit;
+  height: inherit;
+  background: #fab367;
+  clip-path: path("M 153 243 L 238 200 L 239 94 L 155 127 Z");
+}
+
+/* Shadow */
+.shadow {
+  position: absolute;
+  top: 570px;
+  left: 85px;
+  width: 170px;
+  --shadow-color: #ac5c05;
+  border-bottom: 5px var(--shadow-color) solid;
+  transform-origin: center bottom;
+  animation: shadow 5s ease-out infinite;
+  filter: blur(1px);
+}
+
+/* Animation */
+@keyframes box {
+  from {
+    transform: scaleY(0.8);
+  }
+
+  10% {
+    transform: scaleY(1);
+  }
+
+  15% {
+    transform: translateY(-250px) scaleX(0.9);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shadow {
+  from {
+    transform: scaleX(100%);
+  }
+
+  10% {
+    transform: scaleX(100%);
+    --shadow-color: #ac5c05;
+  }
+
+  20% {
+    transform: scaleX(5%);
+    --shadow-color: #fcc891;
+  }
+
+  30% {
+    transform: scaleX(10%);
+    --shadow-color: #fab367;
+  }
+
+  to {
+    transform: scaleX(95%);
+  }
+}
+
+
+#loader {
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #444444;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@keyframes spin {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 900px){
+  #columnsContainer {
+    display: none;    
+  }
+  .timeline{
+    color: white;
+  }
+  #timelineTitle{
+    color: white;
+  }
+}
+
