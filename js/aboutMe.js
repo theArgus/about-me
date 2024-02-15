@@ -75,7 +75,7 @@ function draw()
   strokeWeight(0.5);
   sphere(getSizeS());
   noFill();
-  //fill(getColorS())  
+  //fill(getColorS())
   //stroke(colorPicker.color());
   push();
   angle++;
@@ -96,10 +96,10 @@ function draw()
       sphere(getValss()-j);
       rotateX(getTransX());
       rotateZ(cos(i*j));
-      
+
     }
   }
-  
+
 }
 
 function windowResized() {

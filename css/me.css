@@ -26,12 +26,12 @@ body{
 }
 
 .row{
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 [class*="col-"]{
   margin-bottom: -99999px;
- 
+
   padding-bottom: 99999px;
 }
 
@@ -207,10 +207,10 @@ svg {
 
 .typewriter {
   overflow: hidden;
-  white-space: nowrap; 
-  margin: 0 auto; 
-  letter-spacing: .15em; 
-  animation: 
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
     typing 2.1s steps(40, end),
     blink-caret .75s step-end infinite;
 }
@@ -234,17 +234,17 @@ svg {
   left: 0px;
   width: 250px;
   height: 500px;
-  
+
   --_b: var(--b, 0);
 	width: 9.2em;
 	aspect-ratio: 1;
 	scale: calc(1 + .25*var(--_b));
 	background: color-mix(in hsl, hotpink calc(var(--_b)*100%), darkorange);
-	transition: scale .5s cubic-bezier(1, 0, 0, 1), 
+	transition: scale .5s cubic-bezier(1, 0, 0, 1),
 							background-color .65s ease-out;
 	animation: r 4s linear infinite;
 	animation-play-state: var(--b, paused);
-	
+
 	&:hover { --b: 1 }
 }
 
@@ -254,17 +254,17 @@ svg {
   left: 110px;
   width: 200px;
   height: 500px;
-  
+
   --_b: var(--b, 0);
 	width: 7.7em;
 	aspect-ratio: 1;
 	scale: calc(1 + .25*var(--_b));
 	background: color-mix(in hsl, rgb(64, 215, 253) calc(var(--_b)*100%), rgb(94, 146, 87));
-	transition: scale .5s cubic-bezier(.32, 1.75, .68, 2), 
+	transition: scale .5s cubic-bezier(.32, 1.75, .68, 2),
 							background-color .65s ease-out;
 	animation: r 4s linear infinite;
 	animation-play-state: var(--b, paused);
-	
+
 	&:hover { --b: 1 }
 }
 
@@ -378,7 +378,7 @@ svg {
 
 @media only screen and (max-width: 900px){
   #columnsContainer {
-    display: none;    
+    display: none;
   }
   .timeline{
     color: white;
@@ -387,4 +387,3 @@ svg {
     color: white;
   }
 }
-
