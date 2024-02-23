@@ -46,13 +46,13 @@ function setup()
   canvas.style('z-index', '-1');
   //canvas.style('opacity', '0.7');
   frameRate(12);
-  colorPicker = createColorPicker('#53bd22');
+  colorPicker = createColorPicker('#ecf71b');
   colorPicker.position(100, height+15);
 
-  colorPickerS = createColorPicker('#111');
+  colorPickerS = createColorPicker('#0cc402');
   colorPickerS.position(50, height+15);
 
-  colorPickerB = createColorPicker('#4287f5');
+  colorPickerB = createColorPicker('#fff');
   colorPickerB.position(150, height+15);
 
   noCursor();
@@ -75,7 +75,7 @@ function draw()
   strokeWeight(0.5);
   sphere(getSizeS());
   noFill();
-  //fill(getColorS())  
+  //fill(getColorS())
   //stroke(colorPicker.color());
   push();
   angle++;
@@ -96,10 +96,10 @@ function draw()
       sphere(getValss()-j);
       rotateX(getTransX());
       rotateZ(cos(i*j));
-      
+
     }
   }
-  
+
 }
 
 function windowResized() {
