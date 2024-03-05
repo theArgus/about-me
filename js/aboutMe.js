@@ -1,4 +1,4 @@
-var angle = 0;
+var angle = 2;
 let colorPicker;
 let colorPickerS;
 let colorPickerB;
@@ -52,7 +52,7 @@ function setup()
   colorPickerS = createColorPicker('#0cc402');
   colorPickerS.position(50, height+15);
 
-  colorPickerB = createColorPicker('#fff');
+  colorPickerB = createColorPicker('#000');
   colorPickerB.position(150, height+15);
 
   noCursor();
@@ -72,9 +72,12 @@ function draw()
   rotateX(getVelocity());
   rectMode(CENTER);
   stroke(colorPicker.color());
-  strokeWeight(0.5);
-  sphere(getSizeS());
+  strokeWeight(0.420);
   noFill();
+  push();
+  rotate(angle);
+  sphere(getSizeS());
+  pop();
   //fill(getColorS())
   //stroke(colorPicker.color());
   push();
@@ -84,18 +87,18 @@ function draw()
 
   for (var i = 0; i < getNumberS(); i++)
   {
-    translate(i*13, i*-i)
+    translate(i*7, i*-i)
     //stroke(i,i*27,i+12)
     rotate(angle);
     rectMode(CENTER);
     //stroke(colorPicker.color());
     //sphere(getValss());
     //sphere(12+random(5,i));
-    for (var j = 0; j < 3; j++){
+    for (var j = 0; j < 1; j++){
       stroke(colorPickerS.color());
       sphere(getValss()-j);
-      rotateX(getTransX());
-      rotateZ(cos(i*j));
+      rotateX(getTransX()*angle);
+      rotateZ(cos(i*j)+3);
 
     }
   }
