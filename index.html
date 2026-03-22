@@ -1,399 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>About me, about Noé Huerta</title>
+  <title>Noé Huerta - IT Manager & Full Stack Developer</title>
   <meta charset="utf-8">
-  <meta http-equiv='cache-control' content='no-cache'>
-  <meta http-equiv='expires' content='0'>
-  <meta http-equiv='pragma' content='no-cache'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/me.css">
-  <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    /* Estilos del Loader */
+    #loader {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .spinner {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #003366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    /* Estilos del Panel de Control Escondible */
+    #config-panel {
+      position: fixed;
+      top: 0;
+      left: -280px; /* Escondido por defecto */
+      width: 280px;
+      height: 100%;
+      background: #003366;
+      color: white;
+      transition: 0.3s;
+      z-index: 2000;
+      padding: 20px;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+      overflow-y: auto;
+    }
+    #config-panel.active { left: 0; }
+    
+    #panel-toggle {
+      position: absolute;
+      right: -45px;
+      top: 20px;
+      background: #003366;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+
+    .control-group { margin-bottom: 15px; font-size: 12px; }
+    .control-group label { display: block; margin-bottom: 5px; font-weight: 300; }
+    .slider { width: 100%; height: 5px; }
+
+    /* Estilos del CV */
+    body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+    .header-section { background-color: #003366; color: white; padding: 40px 0; }
+    .content-section { background: white; padding: 40px; border-radius: 8px; margin-top: -20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .section-title { color: #003366; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; font-weight: 700; margin-top: 30px; }
+    .strength-badge { background: #e3f2fd; color: #00509E; padding: 5px 12px; border-radius: 15px; display: inline-block; margin: 3px; font-size: 13px; font-weight: 600; }
+    .job-title { color: #00509E; font-weight: 700; margin-bottom: 0; }
+    .job-meta { font-style: italic; color: #666; font-size: 13px; }
+  </style>
 </head>
 <body>
-  <div id="loader" class="center"></div>
 
-  <div class="container-fluid" style="margin: 0px;">
-    <div class="full-container" style="padding-left: 25px; padding-right: 25px;">
-      <div class="row" style="margin-top: 420px;">
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <div id="config-panel">
+    <button id="panel-toggle" onclick="togglePanel()"><i class="fa fa-cog"></i></button>
+    <h4 style="color: #a3c2e0; margin-bottom: 20px;">Sketch Controls</h4>
+    
+    <div class="control-group">
+      <label>Background Color</label>
+      <input type="checkbox" onchange="getChecked()" id='check1'>
+    </div>
+    <div class="control-group">
+      <label>Center sphere size</label>
+      <input id="sizeS" type="range" min="0" value="22" max="1000" onblur="getSizeS()" class="slider">
+    </div>
+    <div class="control-group">
+      <label>Spheres size</label>
+      <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()" class="slider">
+    </div>
+    <div class="control-group">
+      <label>Rotation</label>
+      <input id="velocity" type="range" min="10" value="30" max="1000" onblur="getVelocity()" class="slider">
+    </div>
+    <div class="control-group">
+      <label>Move in X</label>
+      <input id="transX" type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
+    </div>
+    <div class="control-group">
+      <label>Number of spheres</label>
+      <input id="getNumberS" type="number" value="13" onblur="getNumberS()" class="form-control input-sm">
+    </div>
+  </div>
+
+  <div class="header-section text-center">
+    <div class="container">
+      <h1 style="font-weight: 700;">Noé Huerta Macías</h1>
+      <h2 style="font-weight: 300; color: #a3c2e0;">IT Manager | Computer Engineer</h2>
+      <div class="mt-3">
+        <a href="mailto:noeh@aconsamx.com" style="color: white; margin: 0 10px;"><i class="fa fa-envelope"></i> noeh@aconsamx.com</a>
+        <a href="https://www.linkedin.com/in/noe-huerta" target="_blank" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin"></i> linkedin.com/in/noe-huerta</a>
       </div>
-      <div class="row">
-        <div class="form-group" style="margin-top: 25px;">
-          <div class="col-md-2" style="margin-left: 25px;">
-            <div class="form-group controls" style="margin-top: 35px; padding-right: 25px;">
-              <div class="form-group">
-                Activate the background color:
-                <input type="checkbox" onchange="getChecked()" id='check1' checked="true">
-              </div>
-              <div class="form-group">
-                Center sphere size:
-                <input id="sizeS"  type="range" min="0" value="217" max="1000" onblur="getSizeS()" class="slider">
-              </div>
-              <div class="form-group">
-                Spheres size:
-              <input id="sizeSs" value="25" type="range" min="1" max="100" onblur="getValss()" class="slider">
-              </div>
-              <div class="form-group">
-                Rotation:
-                <input id="velocity"  type="range" min="10" value="77" max="360" onblur="getVelocity()" class="slider">
-              </div>
-              <div class="form-group">
-                Move in X the spheres:
-                <input id="transX"  type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
-              </div>
-              <div class="form-group">
-                How many spheres in the sketch:
-                <input id="getNumberS"  type="number" min="0" value="13" max="52" onblur="getNumberS()" placeholder="13">
-              </div>
-            </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 content-section">
+        
+        <h3 class="section-title">Professional Summary</h3>
+        <p class="lead">Computer Engineer with 10+ years in dev and 4 years as IT Manager. Expert in GCP architecture and BI solutions for the AEC industry.</p>
+        
+        <h3 class="section-title">Core Strengths</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <h5 style="font-weight: 700;">Management</h5>
+            <span class="strength-badge">Technical Leadership</span> <span class="strength-badge">Agile (Kanban)</span> <span class="strength-badge">Strategic Planning</span>
           </div>
-          <div class="col-md-9" style="margin-top: 15px;">
-            <div class="col-md-9">
-              <div class="table-responsive" >
-                <h4 class="typewriter">Noé Huerta Macías</h4>
-              </div>
-              <div class="myresume typewriter table-responsive" style="margin-top: 25px;">
-                <p class="typewriter" style="color: #337ab7; font-size: 21px;">IT Consultant</p>
-                <p style="margin-top: 5px; font-size: 13px;">
-                  <i class="fa fa-envelope" style="margin-right: 7px;"></i> <a href='mailto:noeh@aconsa.com.mx'>Contact me</a> <br>
-                  <i class="fa fa-link" style="margin-right: 7px;"></i> <a target="_blank" href="https://www.linkedin.com/in/noe-huerta" style="cursor: pointer;"> www.linkedin.com/in/noe-huerta</a>
-                </p>
-              </div>
-            </div>
-            <div class="col-md-3" style="margin-top: 25px;">
-              <p class="typewriter" style="text-align: right; font-size: 10px;">
-                <b>#businessIntelligence</b><br>
-                <b>#projectLeadership</b><br>
-                <b>#agileMethodologies</b><br>
-                <b>#fullStackDev </b><br>
-                <b>#techPassionate #creativity</b><br>
-                <b>#engineering #technology</b><br>
-              </p>
-            </div>
-            <div class="col-md-12" style="margin-top: 4.2%;">
-              <p style="text-align: justify;">
-                Hello! <br>
-                I'm a Computer Engineer and a formal developer since 2014. I started to develop solutions for AEC industry since 2016 like full stack developer and I have leader some projects since 2021 like IT Manager.<br>
-                I have experience comproved leading multidisciplinary teams with agile methodology.<br>
-                Good skills for customer relationships, sales and well team player.<br>
-                Since I have 10 years old I have been a tech passionate, so I think I am lucky guy who do what it likes. I hope to get new chalenges soon.
-              </p>
-            </div>
+          <div class="col-md-6">
+            <h5 style="font-weight: 700;">Technical</h5>
+            <span class="strength-badge">Google Cloud (GCP)</span> <span class="strength-badge">Laravel / React</span> <span class="strength-badge">Data BI</span>
           </div>
         </div>
-      </div>
-      <br><br>
-      <div class="row">
-        <div class="col-md-2" style="background-color: #337ab7;">
-            <div id="columnsContainer">
-              <!-- Box -->
-              <div class="box-container">
-                <p style="color: white;font-size: 12px;">Click me</p>
-                <div class="box-container2">
-                  <p style="color: white;font-size: 12px;">Hover me</p>
-                </div>
-              </div>
-            </div>
+
+        <h3 class="section-title">Experience</h3>
+        <div style="margin-bottom: 25px;">
+          <h4 class="job-title">IT Manager</h4>
+          <p class="job-meta">Aconsa | 2021 – Present</p>
+          <ul>
+            <li>Migrated services to GCP, reducing costs by <strong>52%</strong>.</li>
+            <li>Implemented Kanban, improving delivery times by 30%.</li>
+          </ul>
         </div>
-        <div class="col-md-10 col-md-offset-2" style="padding-left: 25px;">
-          <h4 id="timelineTitle" style="font-size: 33px;">Experience</h4>
-          <div class="timeline table-responsive">
-              <ul class="timeline">
-                <li>
-                  <a target="_blank" href="https://aconsa.com.mx/">Information Technology Manager</a>
-                  <span class="float-right" style="font-style: italic;">May 2021, Present | Aconsa</span>
-                  <p>Management of the IT group, that realize maintenance of the infrastructure, provide security,<br>
-                    devices maintenance and support and, develop solutions technology for a build supervisor company.<br>
-                    Planning, executing, and reporting on IT operations and new collaborative techs implementation with agile methodologies.<br>
-                    Manage customer services for SaaS solutions.<br>
-                    Project leadership with agile methodologies.
-                  </p>
-                </li>
-                <li>
-                  <a target="_blank" href="https://aconsa.com.mx/">Full Stack Developer</a>
-                  <span class="float-right" style="font-style: italic;">June 2016, May 2021 | Aconsa</span>
-                  <p>Management of Linux and Windows servers. Bash, Scripting, Virtualization, Apache modules, NGINX.<br>
-                    Development of ERP with Laravel/PHP Javascript.<br>
-                    Linux servers administration.<br>
-                    Design and management of databases with MySQL and Redis.<br>
-                    Open source tools adaptation to business processes.
-                  </p>
-                </li>
-                <li>
-                  <a href="#"> I graduated of Computer Engineer</a>
-                  <span class="float-right" style="font-style: italic;">August, 2008 - 2016 | Education</span>
-                  <p>Universidad Nacional Autónoma de México, UNAM. Faculty of Engineering. <br>
-                    Certified in Information Technologies Oracle. [January - July, 2016] </p>
-                </li>
-                <li>
-                  <a  target="_blank" href="https://www.linkedin.com/company/millward-brown-optimor/?originalSubdomain=mx">Data Analyst</a>
-                  <span class="float-right" style="font-style: italic;">Nov 2015, July 2016 | Millward Brown México</span>
-                  <p>I worked with DB2 database and developed macros to get the analysis of the data got by surveys of a marketing company.</p>
-                </li>
-                <li>
-                  <a target="_blank" href="http://www.perezdelapena.com/">First work in a corporate</a>
-                  <span class="float-right" style="font-style: italic;">January 2013, July 2014 | Pérez de la Peña y Asociados</span>
-                  <p>I worked providing technical support for a law firm, that gave me social skills to treat with clients.</p>
-                </li>
-              </ul>
+
+        <h3 class="section-title">Freelance Projects</h3>
+        <ul>
+          <li>E-commerce: React, React Native, Firebase, Stripe.</li>
+          <li>WordPress: Custom plugins and refactoring.</li>
+          <li>Generative Art: Visual pieces with <strong>JS, p5.js and Processing</strong>.</li>
+        </ul>
+
+        <h3 class="section-title">Academic Achievements</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <p><strong>Google Cloud Data Analytics Certification</strong> (2026)</p>
+            <p><strong>Diploma in Data Visualization</strong>, UNAM (2026)</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Computer Engineering Degree</strong>, UNAM (2017)</p>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-10" style="margin-top: 30px; padding-left: 25px;">
-          <h4 style="font-size: 33px;">Skills</h4>
-          <div class="skills" style="margin-top: 25px; margin-bottom: 250px;">
-            <h5>IT Consultant</h5>
-            <br>
-            <div class="dashboard">
-              <div class="col-md-2" >
-                <div class="progress">
-                  <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Project Managment</div>
-                </div>
-                  <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#">
-                    <i class="fa fa-search" aria-hidden="true"> Details</i>
-                  </button>
-              </div>
-              <div class="col-md-2">
-                <div class="progress">
-                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Security</div>
-                </div>
-                  <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#">
-                    <i class="fa fa-search" aria-hidden="true"> Details</i>
-                  </button>
-              </div>
-              <div class="col-md-2">
-                <div class="progress">
-                  <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Networks</div>
-                </div>
-                  <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#">
-                    <i class="fa fa-search" aria-hidden="true"> Details</i>
-                  </button>
-              </div>
-              <div class="col-md-2">
-                <div class="progress">
-                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">Optimization</div>
-                </div>
-                  <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#">
-                    <i class="fa fa-search" aria-hidden="true"> Details</i>
-                  </button>
-              </div>
-              <div class="col-md-2">
-                <div class="progress">
-                  <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">Digitalization</div>
-                </div>
-                  <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#">
-                    <i class="fa fa-search" aria-hidden="true"> Details</i>
-                  </button>
-              </div>
-
-            </div>
-            <br>
-            <h5>Web Development</h5>
-            <br>
-            <div class="dashboard">
-              <div class="col-md-2" >
-                <div class="progress">
-                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">PHP</div>
-                </div>
-                  <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#php">
-                    <i class="fa fa-search" aria-hidden="true"> Details</i>
-                  </button>
-              </div>
-              <div class="col-md-2">
-                <div class="progress">
-                  <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">JavaScript</div>
-                </div>
-                  <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#js">
-                    <i class="fa fa-search" aria-hidden="true"> Details</i>
-                  </button>
-              </div>
-              <div class="col-md-2">
-                <div class="progress">
-                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">CSS</div>
-                </div>
-                  <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#css">
-                    <i class="fa fa-search" aria-hidden="true"> Details</i>
-                  </button>
-              </div>
-              <div class="col-md-2">
-                <div class="progress">
-                  <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Python</div>
-                </div>
-                  <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#python">
-                    <i class="fa fa-search" aria-hidden="true"> Details</i>
-                  </button>
-              </div>
-              <div class="col-md-2">
-                <div class="progress">
-                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Java</div>
-                </div>
-                  <button type="button" class="btn btn-sm btn-link" data-toggle="modal" data-target="#">
-                    <i class="fa fa-search" aria-hidden="true"> Details</i>
-                  </button>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-        <div class="col-md-2" style="background-color: #337ab7;">
-        </div>
       </div>
     </div>
   </div>
 
-<!-- PHP  -->
-<div class="modal fade" id="php" tabindex="-1" role="dialog" aria-labelledby="phpLabelM" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h5 class="modal-title" id="phpLabelM">PHP</h5>
-      </div>
-      <div class="modal-body" style="background-color: #f8f9fa;">
-        <p>15+ years of experience in PHP development.</p>
-        <p>I have designed, developed, and led the creation of custom web-based applications for various types of industries, in many scales, from simple web pages to a full commercial ERP for AEC sector.</p>
-        <p>Experience using the next frameworks:
-          <ul>
-            <li>Laravel</li>
-            <li>Symfony</li>
-            <li>CodeIgniter</li>
-          </ul>
-        </p>
-        <p>CI/CD with:
-          <ul>
-            <li>GitHub</li>
-            <li>GitLab</li>
-            <li>AWS CodePipeline</li>
-            <li>Docker</li>
-          </ul>
-        </p>
-        <p>Dependency management with:
-          <ul>
-            <li>Composer</li>
-            <li>Yarn</li>
-            <li>NPM</li>
-          </ul>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+  <script src="js/aboutMe.js"></script>
+  <script>
+    // Lógica para esconder el Loader
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('loader');
+      setTimeout(() => {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 500);
+      }, 1000);
+    });
 
-<!-- JS  -->
-<div class="modal fade" id="js" tabindex="-1" role="dialog" aria-labelledby="jsLabelM" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h5 class="modal-title" id="phpLabelM">JavaScript</h5>
-      </div>
-      <div class="modal-body" style="background-color: #f8f9fa;">
-        <p>15+ years of experience in JavaScript development.</p>
-        <p>Strong focus on creating engaging and user-friendly graphical user interfaces.</p>
-        <p>Experience using the next frameworks:
-          <ul>
-            <li>React</li>
-            <li>jQuery</li>
-            <li>Express.js</li>
-            <li>Next.js</li>
-            <li>Node.js</li>
-            <li>TypeScript</li>
-            <li>Vue.js</li>
-            <li>Processing.js</li>
-            <li>p5.js</li>
-            <li>Ajax</li>
-            <li>Fetch</li>
-          </ul>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CSS  -->
-<div class="modal fade" id="css" tabindex="-1" role="dialog" aria-labelledby="cssLabelM" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h5 class="modal-title" id="phpLabelM">CSS</h5>
-      </div>
-      <div class="modal-body" style="background-color: #f8f9fa;">
-        <p>15+ years of experience in CSS development.</p>
-        <p>Strong focus on creating user-experiences with fancy interfaces.</p>
-        <p>Experience using the next frameworks:
-          <ul>
-            <li>Bootstrap</li>
-            <li>Tailwind CSS</li>
-          </ul>
-        </p>
-        <p>Experience using the next software for design:
-          <ul>
-            <li>Mockplus</li>
-            <li>Figma</li>
-            <li>Canvas</li>
-          </ul>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Python  -->
-<div class="modal fade" id="python" tabindex="-1" role="dialog" aria-labelledby="pythonLabelM" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h5 class="modal-title" id="phpLabelM">Python</h5>
-      </div>
-      <div class="modal-body" style="background-color: #f8f9fa;">
-        <p>7+ years of experience in Python development.</p>
-        <p>Collaborated with a team to integrate services and APIs.</p>
-        <p>Experience using the next frameworks:
-          <ul>
-            <li>Django</li>
-            <li>Flask</li>
-          </ul>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script src="js/aboutMe.js"></script>
-<script>
-  document.onreadystatechange = function () {
-      if (document.readyState !== "complete") {
-          document.querySelector(
-              "body").style.visibility = "hidden";
-          document.querySelector(
-              "#loader").style.visibility = "visible";
-      } else {
-          document.querySelector(
-              "#loader").style.display = "none";
-          document.querySelector(
-              "body").style.visibility = "visible";
-      }
-  };
-</script>
+    // Lógica para el Panel Lateral
+    function togglePanel() {
+      document.getElementById('config-panel').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
