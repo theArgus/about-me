@@ -1,160 +1,206 @@
-/* Importación de fuente profesional */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+/* Paleta de colores profesionales: Blancos, grises claros, azules corporativos */
+:root {
+  --primary-blue: #005b96;
+  --dark-blue: #003366;
+  --light-bg: #ffffff;
+  --accent-gray: #f4f6f9;
+  --text-dark: #333333;
+}
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #f4f7f9; /* Blanco azulado muy tenue */
-  color: #333;
+  font-family: 'Montserrat', sans-serif; /* Cambio a fuente profesional */
+  color: var(--text-dark);
   font-size: 16px;
-  -webkit-font-smoothing: antialiased;
+  background-color: transparent;
 }
 
-/* Permitir selección de texto (más profesional para reclutadores) */
-body {
-  user-select: text;
-  -webkit-user-select: text;
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
-/* Contenedor Principal */
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .full-container {
-  background-color: #ffffff;
-  max-width: 1100px;
-  margin: 0 auto;
-  box-shadow: 0 10px 30px rgba(0, 51, 102, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente para que el canvas se note sutilmente */
+  min-height: 100vh;
 }
 
-/* Encabezado y Títulos */
-h1, h2, h3, h4 {
-  color: #003366; /* Azul Marino Corporativo */
+/* Tipografía y Encabezados */
+.main-title {
+  font-size: 42px;
   font-weight: 700;
+  color: var(--dark-blue);
+  margin-bottom: 5px;
+  letter-spacing: -0.5px;
+}
+
+.sub-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary-blue);
   margin-top: 0;
-  font-family: 'Inter', sans-serif; /* Eliminado Caveat */
+  margin-bottom: 15px;
 }
 
-h4 {
-  font-size: 24px;
-  border-bottom: 2px solid #eef2f6;
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark-blue);
+  border-bottom: 2px solid var(--primary-blue);
   padding-bottom: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
-/* Sección de Experiencia (Timeline Profesional) */
+.section-padding {
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 40px;
+}
+
+/* Información de Contacto */
+.contact-info {
+  font-size: 15px;
+  color: #555;
+}
+
+.contact-info a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-info a:hover {
+  color: var(--dark-blue);
+  text-decoration: underline;
+}
+
+.summary-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+  color: var(--text-dark);
+}
+
+/* Listas Profesionales */
+.professional-list {
+  list-style-type: square;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+.professional-list li {
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+/* Línea de Tiempo (Timeline) Rediseñada */
 ul.timeline {
   list-style-type: none;
   position: relative;
-  padding-left: 50px;
+  padding-left: 0;
 }
 
 ul.timeline:before {
   content: ' ';
-  background: #cbdcf0;
+  background: var(--primary-blue);
   display: inline-block;
   position: absolute;
-  left: 20px;
+  left: 9px;
   width: 2px;
   height: 100%;
-  z-index: 100;
+  z-index: 1;
 }
 
 ul.timeline > li {
-  margin: 30px 0;
+  margin: 0 0 30px 0;
+  padding-left: 35px;
+  position: relative;
 }
 
 ul.timeline > li:before {
   content: ' ';
-  background: #ffffff;
+  background: var(--light-bg);
   display: inline-block;
   position: absolute;
   border-radius: 50%;
-  border: 3px solid #00509E; /* Azul Medio */
-  left: 11px;
+  border: 3px solid var(--primary-blue);
+  left: 0;
+  top: 5px;
   width: 20px;
   height: 20px;
-  z-index: 400;
+  z-index: 2;
 }
 
-/* Skills y Fortalezas (Dashboard) */
-.dashboard {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px 0;
+.timeline-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark-blue);
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 
-/* Etiquetas de fortalezas */
-.strength-tag {
-  background-color: #eef2f6;
-  color: #003366;
-  padding: 8px 16px;
-  border-radius: 4px;
+.timeline-date {
+  display: block;
   font-size: 14px;
-  font-weight: 600;
-  border-left: 4px solid #00509E;
+  font-weight: 400;
+  font-style: italic;
+  color: #666;
+  margin-top: 4px;
 }
 
-/* Gráficos Circulares (Simplificados y Profesionales) */
-svg {
-  width: 90px;
-  height: 90px;
+ul.timeline > li p {
+  line-height: 1.6;
+  color: var(--text-dark);
+  text-align: justify;
 }
 
-.bg {
-  fill: none;
-  stroke-width: 8px;
-  stroke: #eef2f6;
+/* Controles P5.js */
+.controls-panel {
+  background-color: var(--accent-gray);
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
 }
 
-[class^="meter-"] {
-  fill: none;
-  stroke-width: 8px;
-  stroke-linecap: round;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-  stroke: #00509E; /* Color único profesional para todas las barras */
+.controls {
+  font-size: 13px;
+  color: var(--text-dark);
 }
 
-/* Ajustes de Bootstrap para limpieza */
-.row {
-  margin: 0;
-  overflow: visible;
+/* Loader */
+#loader {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid var(--primary-blue);
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
 }
 
-.col-md-2, .col-md-10, .col-md-8 {
-  margin-bottom: 0;
-  padding-bottom: 20px;
+.center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
-/* Links */
-a {
-  color: #00509E;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+@keyframes spin {
+  100% { transform: rotate(360deg); }
 }
 
-a:hover {
-  color: #003366;
-  text-decoration: underline;
-}
-
-/* Eliminar elementos de animación y loader anteriores */
-#loader, .box-container, .box-container2, .shadow, .typewriter {
-  display: none !important;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .full-container {
-    margin: 10px;
-    box-shadow: none;
+@media only screen and (max-width: 900px){
+  .controls-panel {
+    margin-bottom: 30px;
   }
-  
-  ul.timeline {
-    padding-left: 30px;
-  }
-  
-  ul
+}
