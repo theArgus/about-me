@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Noé Huerta - IT Manager & Full Stack Developer</title>
+  <title>About me, about Noé Huerta</title>
   <meta charset="utf-8">
   <meta http-equiv='cache-control' content='no-cache'>
   <meta http-equiv='expires' content='0'> 
@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/me.css">
+  <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
@@ -23,131 +24,114 @@
     <div class="full-container" style="padding-left: 25px; padding-right: 25px;">
       
       <div class="row" style="margin-top: 50px;">
-        <div class="form-group" style="margin-top: 25px;">
-          <div class="col-md-2 controls-panel">
-            <div class="form-group controls" style="padding-right: 15px;">
-              <h5 class="section-title" style="font-size: 14px;">Background Controls</h5>
-              <div class="form-group">
-                Activate background: <input type="checkbox" onchange="getChecked()" id='check1'>
-              </div>
-              <div class="form-group">
-                Center sphere size: <input id="sizeS" type="range" min="0" value="22" max="1000" onblur="getSizeS()" class="slider">
-              </div>
-              <div class="form-group">
-                Spheres size: <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()" class="slider">
-              </div>
-              <div class="form-group">
-                Rotation: <input id="velocity" type="range" min="10" value="30" max="1000" onblur="getVelocity()" class="slider">
-              </div>
-              <div class="form-group">
-                Move X: <input id="transX" type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
-              </div>
-              <div class="form-group">
-                Spheres count: <input id="getNumberS" type="number" min="0" value="13" max="52" onblur="getNumberS()" placeholder="13" class="form-control input-sm">
-              </div>
+        <div class="col-md-2">
+          <div class="form-group controls" style="margin-top: 35px; padding-right: 25px;">
+            <p><strong>Background Settings:</strong></p>
+            <div class="form-group">
+              Activate background: <input type="checkbox" onchange="getChecked()" id='check1'>
+            </div>
+            <div class="form-group">
+              Center sphere size: <input id="sizeS" type="range" min="0" value="22" max="1000" onblur="getSizeS()" class="slider">
+            </div>
+            <div class="form-group">
+              Spheres size: <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()" class="slider">
+            </div>
+            <div class="form-group">
+              Rotation: <input id="velocity" type="range" min="10" value="30" max="1000" onblur="getVelocity()" class="slider">
+            </div>
+            <div class="form-group">
+              Move in X: <input id="transX" type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
+            </div>
+            <div class="form-group">
+              Spheres count: <input id="getNumberS" type="number" min="0" value="13" max="52" onblur="getNumberS()" placeholder="13" class="form-control">
             </div>
           </div>
-          
-          <div class="col-md-10" style="margin-top: 15px;">
-            <div class="col-md-8">
-              <h1 class="main-title">Noé Huerta Macías [cite: 1]</h1>
-              <h3 class="sub-title">IT Manager & Full Stack Developer</h3>
-              <p class="contact-info">
-                <i class="fa fa-envelope"></i> <a href='mailto:noeh@aconsamx.com'>noeh@aconsamx.com [cite: 3]</a> | 
-                <i class="fa fa-phone"></i> +52 5561032492 [cite: 2] |
-                <i class="fab fa-linkedin"></i> <a target="_blank" href="https://linkedin.com/in/noe-huertain">linkedin.com/in/noe-huertain [cite: 3]</a>
-              </p>
-              
-              <div class="summary-section" style="margin-top: 25px;">
-                <p>I am a Computer Engineer with more than 10 years in software development and 4 years leading as an IT Manager[cite: 4]. I structure data architecture and consolidate the implementation of digital solutions focused on Business Intelligence for strategic decision-making[cite: 5]. I lead multidisciplinary teams and optimize Cloud infrastructure, internal processes, and corporate tools in the construction sector[cite: 6].</p>
-              </div>
-            </div>
+        </div>
+
+        <div class="col-md-10" style="margin-top: 15px;">
+          <div class="col-md-7">
+            <h1 class="main-name">Noé Huerta Macías</h1>
+            <h3 class="it-consultant">IT Manager & Full Stack Developer</h3>
+            <p style="margin-top: 10px;">
+              <i class="fa fa-envelope" style="margin-right: 7px;"></i> <a href='mailto:noeh@aconsamx.com'>noeh@aconsamx.com</a> <br>
+              <i class="fab fa-linkedin" style="margin-right: 7px;"></i> <a target="_blank" href="https://linkedin.com/in/noe-huertain">linkedin.com/in/noe-huertain</a>
+            </p>
+          </div>
+          <div class="col-md-10" style="margin-top: 2%;">
+            <p class="summary-text">
+              Computer Engineer with more than 10 years in software development and 4 years leading as an IT Manager. I structure data architecture and consolidate the implementation of digital solutions focused on Business Intelligence for strategic decision-making. I lead multidisciplinary teams and optimize Cloud infrastructure, internal processes, and corporate tools in the construction sector.
+            </p>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-10 col-md-offset-2 section-padding">
-          <h2 class="section-title">Strengths [cite: 7, 16]</h2>
+      <div class="row section-margin">
+        <div class="col-md-10 col-md-offset-2">
+          <h2 class="professional-h2">Strengths</h2>
           <div class="row">
-            <div class="col-md-6">
-              <h4 class="sub-title">Technical [cite: 7]</h4>
-              <ul class="professional-list">
-                <li>Data architecture and BI solutions[cite: 9].</li>
-                <li>Cloud infrastructure design and optimization (GCP)[cite: 9].</li>
-                <li>Full Stack development (Laravel, JS/TS, Python, React, APIs, MariaDB, Redis, Firebase)[cite: 10].</li>
-                <li>Low-code solutions integration (M365)[cite: 11].</li>
-                <li>Process automation, standardization and operational efficiency[cite: 12, 13, 14].</li>
-                <li>Virtualization and Linux administration[cite: 15].</li>
+            <div class="col-md-5">
+              <h4 class="blue-title">Technical</h4>
+              <ul class="cv-list">
+                <li>Data architecture and BI solutions.</li>
+                <li>Cloud infrastructure design and optimization (GCP).</li>
+                <li>Full Stack (Laravel, JS/TS, Python, React, MariaDB, Redis, Firebase).</li>
+                <li>Low-code solutions integration (M365).</li>
+                <li>Process automation and operational efficiency.</li>
+                <li>Virtualization and Linux administration.</li>
               </ul>
             </div>
-            <div class="col-md-6">
-              <h4 class="sub-title">Management [cite: 16]</h4>
-              <ul class="professional-list">
-                <li>Technical leadership, team coordination and deliverable assurance[cite: 20].</li>
-                <li>Agile methodologies implementation (mainly Kanban)[cite: 21].</li>
-                <li>IT strategic planning aligned to business[cite: 22].</li>
-                <li>Executive communication[cite: 22].</li>
-                <li>Digital transformation[cite: 23].</li>
-                <li>Data-driven decision-making[cite: 24].</li>
+            <div class="col-md-5">
+              <h4 class="blue-title">Management</h4>
+              <ul class="cv-list">
+                <li>Technical leadership and team coordination.</li>
+                <li>Agile methodologies (Kanban).</li>
+                <li>IT strategic planning aligned to business.</li>
+                <li>Executive communication.</li>
+                <li>Digital transformation and data-driven decision-making.</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-10 col-md-offset-2 section-padding">
-          <h2 class="section-title">Experience</h2>
-          <ul class="timeline">
-            <li>
-              <h4 class="timeline-heading">IT Manager <span class="timeline-date">March 2021 - Present | Aconsa [cite: 25, 26]</span></h4>
-              <p>I lead the IT area, supervising infrastructure, support, and the software development lifecycle[cite: 27]. I design and consolidate the company data analysis architecture, enabling executive dashboards that improve visibility and operational control at the executive level[cite: 28]. I translate business problems into practical and measurable technology solutions[cite: 29]. I migrated corporate services to Google Cloud Platform, achieving a 52% cost reduction through architecture redesign and information management optimization[cite: 30]. I increased team efficiency by implementing Kanban, improving delivery times by 30%[cite: 31].</p>
-            </li>
-            <li>
-              <h4 class="timeline-heading">Full Stack Developer <span class="timeline-date">June 2016 - March 2021 | Aconsa [cite: 32, 33, 34]</span></h4>
-              <p>I led and participated in the development of key internal solutions, including the ERP and CRM[cite: 35]. I designed scalable architectures and defined standards for deployment and maintenance[cite: 36]. ERP: Implemented a Laravel backend and a dynamic JavaScript/TypeScript frontend with Bootstrap, integrating MariaDB, Redis, and Firebase[cite: 37]. CRM: Developed with Microsoft 365 low-code tools: Power Apps, Power Automate, Lists, Power Pages, and Power BI[cite: 38]. Administered virtualized Linux environments on Hyper-V and coordinated integrations with multiple corporate APIs[cite: 39]. Used Git, Postman, Composer, and Docker for deployment, testing, and version control[cite: 40].</p>
-            </li>
-            <li>
-              <h4 class="timeline-heading">Data Analyst <span class="timeline-date">September 2015 - June 2016 | Milward Brown [cite: 41, 42]</span></h4>
-              <p>Automated data cleaning and transformation processes from DB2[cite: 43]. Built executive reports using VBA[cite: 43].</p>
-            </li>
-            <li>
-              <h4 class="timeline-heading">Intern <span class="timeline-date">June 2013 - February 2015 | Pérez de la Peña y Abogados [cite: 44, 45]</span></h4>
-              <p>Technical support for software, hardware and local network deployment[cite: 46].</p>
-            </li>
+      <div class="row section-margin">
+        <div class="col-md-10 col-md-offset-2">
+          <h2 class="professional-h2">Experience</h2>
+          <div class="timeline-container">
+            <div class="exp-item">
+              <span class="exp-date">March 2021 - Present | Aconsa</span>
+              <h4 class="exp-role">IT Manager</h4>
+              <p>I lead the IT area, supervising infrastructure and software development. Consolidated the company's data analysis architecture, enabling executive dashboards. Migrated services to GCP, achieving a 52% cost reduction. Implemented Kanban, improving delivery times by 30%.</p>
+            </div>
+            <div class="exp-item">
+              <span class="exp-date">June 2016 - March 2021 | Aconsa</span>
+              <h4 class="exp-role">Full Stack Developer</h4>
+              <p>Developed ERP and CRM systems. Implemented Laravel backend with JS/TS frontend. Managed virtualized Linux environments and coordinated integrations with corporate APIs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row section-margin">
+        <div class="col-md-10 col-md-offset-2 freelance-box">
+          <h3 class="blue-title">Freelance Projects</h3>
+          <ul class="cv-list">
+            <li><strong>Food Retail Store:</strong> Online store with inventory management (React, React Native, Firebase, AWS S3, Stripe).</li>
+            <li><strong>WordPress:</strong> Development and refactoring of plugins for various industries.</li>
+            <li><strong>BI Solutions:</strong> Cloud solution for sales analysis in pet products business.</li>
+            <li><strong>Creative Coding:</strong> Visual pieces using JS, p5, and Processing.</li>
           </ul>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-10 col-md-offset-2 section-padding">
-          <h2 class="section-title">Freelance Experience [cite: 59]</h2>
-          <ul class="professional-list">
-            <li>I developed an online store with inventory and cost management for a food retail client (React, React Native, Firebase, AWS S3, Stripe, PayPal)[cite: 61, 62].</li>
-            <li>I developed and refactored WordPress plugins for clients in several industries[cite: 63].</li>
-            <li>I adapted a cloud solution for sales analysis for a pet products business[cite: 64].</li>
-            <li>I created visual pieces with code (JS, p5, Processing)[cite: 65].</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-10 col-md-offset-2 section-padding" style="margin-bottom: 50px;">
-          <h2 class="section-title">Academic Achievements</h2>
-          <ul class="timeline">
-            <li>
-              <h4 class="timeline-heading">Google Cloud Data Analytics Certification <span class="timeline-date">2026 | Google Skills [cite: 55, 56, 57]</span></h4>
-            </li>
-            <li>
-              <h4 class="timeline-heading">Diploma / Data Visualization and Management with Google Cloud <span class="timeline-date">2026 | UNAM, DGTIC [cite: 53, 54]</span></h4>
-            </li>
-            <li>
-              <h4 class="timeline-heading">Computer Engineering <span class="timeline-date">2017 | UNAM, Faculty of Engineering [cite: 47, 48, 49]</span></h4>
-            </li>
-            <li>
-              <h4 class="timeline-heading">Diploma / Information Technologies <span class="timeline-date">2016 | Oracle - UNAM, Faculty of Engineering [cite: 50, 51, 52]</span></h4>
-            </li>
+      <div class="row section-margin" style="padding-bottom: 60px;">
+        <div class="col-md-10 col-md-offset-2">
+          <h2 class="professional-h2">Academic Achievements</h2>
+          <ul class="cv-list acad-list">
+            <li><strong>Google Cloud Data Analytics Certification</strong> (2026) - Google Skills</li>
+            <li><strong>Diploma / Data Visualization and Management with Google Cloud</strong> (2026) - UNAM, DGTIC</li>
+            <li><strong>Computer Engineering</strong> (2017) - Universidad Nacional Autónoma de México (UNAM)</li>
+            <li><strong>Diploma / Information Technologies Oracle</strong> (2016) - UNAM, Faculty of Engineering</li>
           </ul>
         </div>
       </div>
