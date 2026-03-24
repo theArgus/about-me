@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/me.css">
-  <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
@@ -21,199 +21,137 @@
 
   <div class="container-fluid" style="margin: 0px;">
     <div class="full-container" style="padding-left: 25px; padding-right: 25px;">
-      <div class="row" style="margin-top: 420px;">
-      </div>
-      <div class="row">
-        <div class="form-group" style="margin-top: 25px;">
-          <div class="col-md-2">
-            <div class="form-group controls" style="margin-top: 35px; padding-right: 25px;">
-              <div class="form-group">
-                Activate the background color:
-                <input type="checkbox" onchange="getChecked()" id='check1'>
-              </div>
-              <div class="form-group">
-                Center sphere size:
-                <input id="sizeS"  type="range" min="0" value="22" max="1000" onblur="getSizeS()" class="slider">
-              </div>
-              <div class="form-group">
-                Spheres size:
-              <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()" class="slider">
-              </div>
-              <div class="form-group">
-                Rotation:
-                <input id="velocity"  type="range" min="10" value="30" max="1000" onblur="getVelocity()" class="slider">
-              </div>
-              <div class="form-group">
-                Move in X the spheres:
-                <input id="transX"  type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
-              </div>
-              <div class="form-group">
-                How many spheres in the sketch:
-                <input id="getNumberS"  type="number" min="0" value="13" max="52" onblur="getNumberS()" placeholder="13">
-              </div>
-            </div>
-          </div>
-          <div class="col-md-10" style="margin-top: 15px;">
-            <div class="col-md-7">
-              <div class="table-responsive" >
-                <h4 class="typewriter">Noé Huerta Macías</h4>
-              </div>
-              <div class="myresume typewriter table-responsive" style="margin-top: 25px;">
-                <p class="typewriter" style="color: #337ab7; font-size: 21px;">IT Manager / Computer Engineer</p>
-                <p style="margin-top: 5px;;">
-                  <i class="fa fa-envelope" style="margin-right: 7px;"></i> <a href='mailto:noeh@aconsamx.com'>Contact me</a> <br>
-                  <i class="fa fa-link" style="margin-right: 7px;"></i> <a target="_blank" href="https://www.linkedin.com/in/noe-huerta" style="cursor: pointer;"> www.linkedin.com/in/noe-huerta</a>
-                </p>
-              </div>
-            </div>
-            <div class="col-md-3" style="margin-top: 25px;;">
-              <p class="typewriter" style="text-align: right; font-size: small; ">
-                <b>#ITManagement</b><br>
-                <b>#CloudArchitecture</b><br>
-                <b>#BusinessIntelligence</b><br>
-                <b>#FullStackDev</b><br>
-                <b>#AgileMethodologies</b><br>
-                <b>#DataDriven</b><br>
-              </p>
-            </div>
-            <div class="col-md-10" style="margin-top: 2%;">
-              <p style="text-align: justify;">
-                Hello! <br>
-                I am a Computer Engineer with more than 10 years in software development and 4 years leading as an IT Manager. I structure data architecture and consolidate the implementation of digital solutions focused on Business Intelligence for strategic decision-making.<br>
-                I lead multidisciplinary teams and optimize Cloud infrastructure (mainly GCP), internal processes, and corporate tools in the construction sector.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr style="margin: 40px 0; border-color: #e9ecef;">
-
-        <h3 class="section-title">Core Strengths</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <h4 style="color: #444; font-weight: 600; margin-bottom: 15px;">Management</h4>
-            <span class="strength-badge">Technical Leadership</span>
-            <span class="strength-badge">Agile (Kanban)</span>
-            <span class="strength-badge">IT Strategic Planning</span>
-            <span class="strength-badge">Executive Communication</span>
-            <span class="strength-badge">Digital Transformation</span>
-            <span class="strength-badge">Data-Driven Decisions</span>
-          </div>
-          <div class="col-md-6">
-            <h4 style="color: #444; font-weight: 600; margin-bottom: 15px;">Technical</h4>
-            <span class="strength-badge">GCP Cloud Infrastructure</span>
-            <span class="strength-badge">Data Architecture & BI</span>
-            <span class="strength-badge">Full Stack (Laravel, React)</span>
-            <span class="strength-badge">M365 Low-code</span>
-            <span class="strength-badge">Linux Administration</span>
-            <span class="strength-badge">Process Automation</span>
-          </div>
-        </div>
-
-        <hr style="margin: 40px 0; border-color: #e9ecef;">
       
-        <div class="col-md-10 col-md-offset-2" style="padding-left: 25px;">
-          <h4 id="timelineTitle" style="font-size: 33px;">Experience & Education</h4>
-          <div class="timeline table-responsive">
-              <ul class="timeline">
-                <li>
-                  <a target="_blank" href="https://aconsa.com.mx/">IT Manager</a>
-                  <span class="float-right" style="font-style: italic;">March 2021 - Present | Aconsa</span>
-                  <p>I lead the IT area, supervising infrastructure, support, and the software development lifecycle. I design and consolidate the company data analysis architecture for executive decision-making. <br>
-                    • Migrated corporate services to Google Cloud Platform, achieving a 52% cost reduction.<br>
-                    • Increased team efficiency by implementing Kanban, improving delivery times by 30%.
-                  </p>
-                </li>
-                <li>
-                  <a target="_blank" href="https://aconsa.com.mx/">Full Stack Developer</a>
-                  <span class="float-right" style="font-style: italic;">June 2016 - March 2021 | Aconsa</span>
-                  <p>Led and participated in the development of key internal solutions, designing scalable architectures.<br>
-                    • <b>ERP:</b> Implemented a Laravel backend and a dynamic JS/TS frontend, integrating MariaDB, Redis, and Firebase.<br>
-                    • <b>CRM:</b> Developed with Microsoft 365 low-code tools (Power Apps, Power Automate, Power BI).<br>
-                    • Administered virtualized Linux environments and used Git/Docker for deployments.
-                  </p>
-                </li>
-                <li>
-                  <a href="#">Education & Certifications</a>
-                  <span class="float-right" style="font-style: italic;">2017 - 2026</span>
-                  <p>
-                    • <b>Certification:</b> Google Cloud Data Analytics (2026)<br>
-                    • <b>Diploma:</b> Data Visualization and Management with Google Cloud, UNAM DGTIC (2026)<br>
-                    • <b>Degree:</b> Computer Engineering, UNAM Faculty of Engineering (2017)
-                  </p>
-                </li>
-                <li>
-                  <a  target="_blank" href="https://es.foursquare.com/v/millward-brown-m%C3%A9xico/4d2de366ad3a8cfa3f1c8fbd/photos">Data Analyst</a>
-                  <span class="float-right" style="font-style: italic;">September 2015 - June 2016 | Millward Brown</span>
-                  <p>Automated data cleaning and transformation processes from DB2. Built executive reports using VBA.</p>
-                </li>
-              </ul>
+      <div class="row" style="margin-top: 50px;">
+        <div class="form-group" style="margin-top: 25px;">
+          <div class="col-md-2 controls-panel">
+            <div class="form-group controls" style="padding-right: 15px;">
+              <h5 class="section-title" style="font-size: 14px;">Background Controls</h5>
+              <div class="form-group">
+                Activate background: <input type="checkbox" onchange="getChecked()" id='check1'>
+              </div>
+              <div class="form-group">
+                Center sphere size: <input id="sizeS" type="range" min="0" value="22" max="1000" onblur="getSizeS()" class="slider">
+              </div>
+              <div class="form-group">
+                Spheres size: <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()" class="slider">
+              </div>
+              <div class="form-group">
+                Rotation: <input id="velocity" type="range" min="10" value="30" max="1000" onblur="getVelocity()" class="slider">
+              </div>
+              <div class="form-group">
+                Move X: <input id="transX" type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
+              </div>
+              <div class="form-group">
+                Spheres count: <input id="getNumberS" type="number" min="0" value="13" max="52" onblur="getNumberS()" placeholder="13" class="form-control input-sm">
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-10" style="margin-top: 15px;">
+            <div class="col-md-8">
+              <h1 class="main-title">Noé Huerta Macías [cite: 1]</h1>
+              <h3 class="sub-title">IT Manager & Full Stack Developer</h3>
+              <p class="contact-info">
+                <i class="fa fa-envelope"></i> <a href='mailto:noeh@aconsamx.com'>noeh@aconsamx.com [cite: 3]</a> | 
+                <i class="fa fa-phone"></i> +52 5561032492 [cite: 2] |
+                <i class="fab fa-linkedin"></i> <a target="_blank" href="https://linkedin.com/in/noe-huertain">linkedin.com/in/noe-huertain [cite: 3]</a>
+              </p>
+              
+              <div class="summary-section" style="margin-top: 25px;">
+                <p>I am a Computer Engineer with more than 10 years in software development and 4 years leading as an IT Manager[cite: 4]. I structure data architecture and consolidate the implementation of digital solutions focused on Business Intelligence for strategic decision-making[cite: 5]. I lead multidisciplinary teams and optimize Cloud infrastructure, internal processes, and corporate tools in the construction sector[cite: 6].</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-md-offset-2" style="margin-top: 30px; padding-left: 25px;">
-          <h4 style="font-size: 33px;">Technical Skills</h4>
-          <div class="skills table-responsive" style="margin-top: 25px;">
-            <div class="dashboard">
-              GCP / Cloud
-              <p>
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="52" />
-                  <circle class="meter-1" cx="57" cy="57" r="52" />
-                </svg>
-              </p>
-              <p>Laravel / PHP
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="52" />
-                  <circle class="meter-2" cx="57" cy="57" r="52" />
-                </svg>
-              </p>
-              <p>JS / TS / React
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="52" />
-                  <circle class="meter-3" cx="57" cy="57" r="52" />
-                </svg>
-              </p>
-              <p>Python
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="52" />
-                  <circle class="meter-4" cx="57" cy="57" r="52" />
-                </svg>
-              </p>
+        <div class="col-md-10 col-md-offset-2 section-padding">
+          <h2 class="section-title">Strengths [cite: 7, 16]</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <h4 class="sub-title">Technical [cite: 7]</h4>
+              <ul class="professional-list">
+                <li>Data architecture and BI solutions[cite: 9].</li>
+                <li>Cloud infrastructure design and optimization (GCP)[cite: 9].</li>
+                <li>Full Stack development (Laravel, JS/TS, Python, React, APIs, MariaDB, Redis, Firebase)[cite: 10].</li>
+                <li>Low-code solutions integration (M365)[cite: 11].</li>
+                <li>Process automation, standardization and operational efficiency[cite: 12, 13, 14].</li>
+                <li>Virtualization and Linux administration[cite: 15].</li>
+              </ul>
             </div>
-            <div class="dashboard">
-              <p>MariaDB / MySQL
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="52" />
-                  <circle class="meter-9" cx="57" cy="57" r="52" />
-                </svg>
-              </p>
-              <p>Redis
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="52" />
-                  <circle class="meter-5" cx="57" cy="57" r="52" />
-                </svg>
-              </p>
-              <p>M365 / Power BI
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="52" />
-                  <circle class="meter-6" cx="57" cy="57" r="52" />
-                </svg>
-              </p>
-              <p>Linux Admin
-                <svg>
-                  <circle class="bg" cx="57" cy="57" r="52" />
-                  <circle class="meter-7" cx="57" cy="57" r="52" />
-                </svg>
-              </p>
+            <div class="col-md-6">
+              <h4 class="sub-title">Management [cite: 16]</h4>
+              <ul class="professional-list">
+                <li>Technical leadership, team coordination and deliverable assurance[cite: 20].</li>
+                <li>Agile methodologies implementation (mainly Kanban)[cite: 21].</li>
+                <li>IT strategic planning aligned to business[cite: 22].</li>
+                <li>Executive communication[cite: 22].</li>
+                <li>Digital transformation[cite: 23].</li>
+                <li>Data-driven decision-making[cite: 24].</li>
+              </ul>
             </div>
           </div>
         </div>
-        <div class="col-md-2" style="background-color: #337ab7;">
+      </div>
+
+      <div class="row">
+        <div class="col-md-10 col-md-offset-2 section-padding">
+          <h2 class="section-title">Experience</h2>
+          <ul class="timeline">
+            <li>
+              <h4 class="timeline-heading">IT Manager <span class="timeline-date">March 2021 - Present | Aconsa [cite: 25, 26]</span></h4>
+              <p>I lead the IT area, supervising infrastructure, support, and the software development lifecycle[cite: 27]. I design and consolidate the company data analysis architecture, enabling executive dashboards that improve visibility and operational control at the executive level[cite: 28]. I translate business problems into practical and measurable technology solutions[cite: 29]. I migrated corporate services to Google Cloud Platform, achieving a 52% cost reduction through architecture redesign and information management optimization[cite: 30]. I increased team efficiency by implementing Kanban, improving delivery times by 30%[cite: 31].</p>
+            </li>
+            <li>
+              <h4 class="timeline-heading">Full Stack Developer <span class="timeline-date">June 2016 - March 2021 | Aconsa [cite: 32, 33, 34]</span></h4>
+              <p>I led and participated in the development of key internal solutions, including the ERP and CRM[cite: 35]. I designed scalable architectures and defined standards for deployment and maintenance[cite: 36]. ERP: Implemented a Laravel backend and a dynamic JavaScript/TypeScript frontend with Bootstrap, integrating MariaDB, Redis, and Firebase[cite: 37]. CRM: Developed with Microsoft 365 low-code tools: Power Apps, Power Automate, Lists, Power Pages, and Power BI[cite: 38]. Administered virtualized Linux environments on Hyper-V and coordinated integrations with multiple corporate APIs[cite: 39]. Used Git, Postman, Composer, and Docker for deployment, testing, and version control[cite: 40].</p>
+            </li>
+            <li>
+              <h4 class="timeline-heading">Data Analyst <span class="timeline-date">September 2015 - June 2016 | Milward Brown [cite: 41, 42]</span></h4>
+              <p>Automated data cleaning and transformation processes from DB2[cite: 43]. Built executive reports using VBA[cite: 43].</p>
+            </li>
+            <li>
+              <h4 class="timeline-heading">Intern <span class="timeline-date">June 2013 - February 2015 | Pérez de la Peña y Abogados [cite: 44, 45]</span></h4>
+              <p>Technical support for software, hardware and local network deployment[cite: 46].</p>
+            </li>
+          </ul>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-md-10 col-md-offset-2 section-padding">
+          <h2 class="section-title">Freelance Experience [cite: 59]</h2>
+          <ul class="professional-list">
+            <li>I developed an online store with inventory and cost management for a food retail client (React, React Native, Firebase, AWS S3, Stripe, PayPal)[cite: 61, 62].</li>
+            <li>I developed and refactored WordPress plugins for clients in several industries[cite: 63].</li>
+            <li>I adapted a cloud solution for sales analysis for a pet products business[cite: 64].</li>
+            <li>I created visual pieces with code (JS, p5, Processing)[cite: 65].</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-10 col-md-offset-2 section-padding" style="margin-bottom: 50px;">
+          <h2 class="section-title">Academic Achievements</h2>
+          <ul class="timeline">
+            <li>
+              <h4 class="timeline-heading">Google Cloud Data Analytics Certification <span class="timeline-date">2026 | Google Skills [cite: 55, 56, 57]</span></h4>
+            </li>
+            <li>
+              <h4 class="timeline-heading">Diploma / Data Visualization and Management with Google Cloud <span class="timeline-date">2026 | UNAM, DGTIC [cite: 53, 54]</span></h4>
+            </li>
+            <li>
+              <h4 class="timeline-heading">Computer Engineering <span class="timeline-date">2017 | UNAM, Faculty of Engineering [cite: 47, 48, 49]</span></h4>
+            </li>
+            <li>
+              <h4 class="timeline-heading">Diploma / Information Technologies <span class="timeline-date">2016 | Oracle - UNAM, Faculty of Engineering [cite: 50, 51, 52]</span></h4>
+            </li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -221,214 +159,13 @@
 <script>
   document.onreadystatechange = function () {
       if (document.readyState !== "complete") {
-          document.querySelector(
-              "body").style.visibility = "hidden";
-          document.querySelector(
-              "#loader").style.visibility = "visible";
+          document.querySelector("body").style.visibility = "hidden";
+          document.querySelector("#loader").style.visibility = "visible";
       } else {
-          document.querySelector(
-              "#loader").style.display = "none";
-          document.querySelector(
-              "body").style.visibility = "visible";
+          document.querySelector("#loader").style.display = "none";
+          document.querySelector("body").style.visibility = "visible";
       }
   };
 </script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Noé Huerta - IT Manager & Full Stack Developer</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-  <style>
-    /* Estilos del Loader */
-    #loader {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-    .spinner {
-      border: 8px solid #f3f3f3;
-      border-top: 8px solid #003366;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-    /* Estilos del Panel de Control Escondible */
-    #config-panel {
-      position: fixed;
-      top: 0;
-      left: -280px; /* Escondido por defecto */
-      width: 280px;
-      height: 100%;
-      background: #003366;
-      color: white;
-      transition: 0.3s;
-      z-index: 2000;
-      padding: 20px;
-      box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-      overflow-y: auto;
-    }
-    #config-panel.active { left: 0; }
-    
-    #panel-toggle {
-      position: absolute;
-      right: -45px;
-      top: 20px;
-      background: #003366;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 0 5px 5px 0;
-      cursor: pointer;
-    }
-
-    .control-group { margin-bottom: 15px; font-size: 12px; }
-    .control-group label { display: block; margin-bottom: 5px; font-weight: 300; }
-    .slider { width: 100%; height: 5px; }
-
-    /* Estilos del CV */
-    body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
-    .header-section { background-color: #003366; color: white; padding: 40px 0; }
-    .content-section { background: white; padding: 40px; border-radius: 8px; margin-top: -20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-    .section-title { color: #003366; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; font-weight: 700; margin-top: 30px; }
-    .strength-badge { background: #e3f2fd; color: #00509E; padding: 5px 12px; border-radius: 15px; display: inline-block; margin: 3px; font-size: 13px; font-weight: 600; }
-    .job-title { color: #00509E; font-weight: 700; margin-bottom: 0; }
-    .job-meta { font-style: italic; color: #666; font-size: 13px; }
-  </style>
-</head>
-<body>
-
-  <div id="loader">
-    <div class="spinner"></div>
-  </div>
-
-  <div id="config-panel">
-    <button id="panel-toggle" onclick="togglePanel()"><i class="fa fa-cog"></i></button>
-    <h4 style="color: #a3c2e0; margin-bottom: 20px;">Sketch Controls</h4>
-    
-    <div class="control-group">
-      <label>Background Color</label>
-      <input type="checkbox" onchange="getChecked()" id='check1'>
-    </div>
-    <div class="control-group">
-      <label>Center sphere size</label>
-      <input id="sizeS" type="range" min="0" value="22" max="1000" onblur="getSizeS()" class="slider">
-    </div>
-    <div class="control-group">
-      <label>Spheres size</label>
-      <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()" class="slider">
-    </div>
-    <div class="control-group">
-      <label>Rotation</label>
-      <input id="velocity" type="range" min="10" value="30" max="1000" onblur="getVelocity()" class="slider">
-    </div>
-    <div class="control-group">
-      <label>Move in X</label>
-      <input id="transX" type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
-    </div>
-    <div class="control-group">
-      <label>Number of spheres</label>
-      <input id="getNumberS" type="number" value="13" onblur="getNumberS()" class="form-control input-sm">
-    </div>
-  </div>
-
-  <div class="header-section text-center">
-    <div class="container">
-      <h1 style="font-weight: 700;">Noé Huerta Macías</h1>
-      <h2 style="font-weight: 300; color: #a3c2e0;">IT Manager | Computer Engineer</h2>
-      <div class="mt-3">
-        <a href="mailto:noeh@aconsamx.com" style="color: white; margin: 0 10px;"><i class="fa fa-envelope"></i> noeh@aconsamx.com</a>
-        <a href="https://www.linkedin.com/in/noe-huerta" target="_blank" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin"></i> linkedin.com/in/noe-huerta</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1 content-section">
-        
-        <h3 class="section-title">Professional Summary</h3>
-        <p class="lead">Computer Engineer with 10+ years in dev and 4 years as IT Manager. Expert in GCP architecture and BI solutions for the AEC industry.</p>
-        
-        <h3 class="section-title">Core Strengths</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <h5 style="font-weight: 700;">Management</h5>
-            <span class="strength-badge">Technical Leadership</span> <span class="strength-badge">Agile (Kanban)</span> <span class="strength-badge">Strategic Planning</span>
-          </div>
-          <div class="col-md-6">
-            <h5 style="font-weight: 700;">Technical</h5>
-            <span class="strength-badge">Google Cloud (GCP)</span> <span class="strength-badge">Laravel / React</span> <span class="strength-badge">Data BI</span>
-          </div>
-        </div>
-
-        <h3 class="section-title">Experience</h3>
-        <div style="margin-bottom: 25px;">
-          <h4 class="job-title">IT Manager</h4>
-          <p class="job-meta">Aconsa | 2021 – Present</p>
-          <ul>
-            <li>Migrated services to GCP, reducing costs by <strong>52%</strong>.</li>
-            <li>Implemented Kanban, improving delivery times by 30%.</li>
-          </ul>
-        </div>
-
-        <h3 class="section-title">Freelance Projects</h3>
-        <ul>
-          <li>E-commerce: React, React Native, Firebase, Stripe.</li>
-          <li>WordPress: Custom plugins and refactoring.</li>
-          <li>Generative Art: Visual pieces with <strong>JS, p5.js and Processing</strong>.</li>
-        </ul>
-
-        <h3 class="section-title">Academic Achievements</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <p><strong>Google Cloud Data Analytics Certification</strong> (2026)</p>
-            <p><strong>Diploma in Data Visualization</strong>, UNAM (2026)</p>
-          </div>
-          <div class="col-md-6">
-            <p><strong>Computer Engineering Degree</strong>, UNAM (2017)</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <script src="js/aboutMe.js"></script>
-  <script>
-    // Lógica para esconder el Loader
-    window.addEventListener('load', function() {
-      const loader = document.getElementById('loader');
-      setTimeout(() => {
-        loader.style.opacity = '0';
-        setTimeout(() => loader.style.display = 'none', 500);
-      }, 1000);
-    });
-
-    // Lógica para el Panel Lateral
-    function togglePanel() {
-      document.getElementById('config-panel').classList.toggle('active');
-    }
-  </script>
 </body>
 </html>
