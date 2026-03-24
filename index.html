@@ -3,6 +3,244 @@
 <head>
   <title>Noé Huerta - IT Manager & Full Stack Developer</title>
   <meta charset="utf-8">
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='pragma' content='no-cache'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/me.css">
+  <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div id="loader" class="center"></div>
+
+  <div class="container-fluid" style="margin: 0px;">
+    <div class="full-container" style="padding-left: 25px; padding-right: 25px;">
+      <div class="row" style="margin-top: 420px;">
+      </div>
+      <div class="row">
+        <div class="form-group" style="margin-top: 25px;">
+          <div class="col-md-2">
+            <div class="form-group controls" style="margin-top: 35px; padding-right: 25px;">
+              <div class="form-group">
+                Activate the background color:
+                <input type="checkbox" onchange="getChecked()" id='check1'>
+              </div>
+              <div class="form-group">
+                Center sphere size:
+                <input id="sizeS"  type="range" min="0" value="22" max="1000" onblur="getSizeS()" class="slider">
+              </div>
+              <div class="form-group">
+                Spheres size:
+              <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()" class="slider">
+              </div>
+              <div class="form-group">
+                Rotation:
+                <input id="velocity"  type="range" min="10" value="30" max="1000" onblur="getVelocity()" class="slider">
+              </div>
+              <div class="form-group">
+                Move in X the spheres:
+                <input id="transX"  type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
+              </div>
+              <div class="form-group">
+                How many spheres in the sketch:
+                <input id="getNumberS"  type="number" min="0" value="13" max="52" onblur="getNumberS()" placeholder="13">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10" style="margin-top: 15px;">
+            <div class="col-md-7">
+              <div class="table-responsive" >
+                <h4 class="typewriter">Noé Huerta Macías</h4>
+              </div>
+              <div class="myresume typewriter table-responsive" style="margin-top: 25px;">
+                <p class="typewriter" style="color: #337ab7; font-size: 21px;">IT Manager / Computer Engineer</p>
+                <p style="margin-top: 5px;;">
+                  <i class="fa fa-envelope" style="margin-right: 7px;"></i> <a href='mailto:noeh@aconsamx.com'>Contact me</a> <br>
+                  <i class="fa fa-link" style="margin-right: 7px;"></i> <a target="_blank" href="https://www.linkedin.com/in/noe-huerta" style="cursor: pointer;"> www.linkedin.com/in/noe-huerta</a>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-3" style="margin-top: 25px;;">
+              <p class="typewriter" style="text-align: right; font-size: small; ">
+                <b>#ITManagement</b><br>
+                <b>#CloudArchitecture</b><br>
+                <b>#BusinessIntelligence</b><br>
+                <b>#FullStackDev</b><br>
+                <b>#AgileMethodologies</b><br>
+                <b>#DataDriven</b><br>
+              </p>
+            </div>
+            <div class="col-md-10" style="margin-top: 2%;">
+              <p style="text-align: justify;">
+                Hello! <br>
+                I am a Computer Engineer with more than 10 years in software development and 4 years leading as an IT Manager. I structure data architecture and consolidate the implementation of digital solutions focused on Business Intelligence for strategic decision-making.<br>
+                I lead multidisciplinary teams and optimize Cloud infrastructure (mainly GCP), internal processes, and corporate tools in the construction sector.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr style="margin: 40px 0; border-color: #e9ecef;">
+
+        <h3 class="section-title">Core Strengths</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <h4 style="color: #444; font-weight: 600; margin-bottom: 15px;">Management</h4>
+            <span class="strength-badge">Technical Leadership</span>
+            <span class="strength-badge">Agile (Kanban)</span>
+            <span class="strength-badge">IT Strategic Planning</span>
+            <span class="strength-badge">Executive Communication</span>
+            <span class="strength-badge">Digital Transformation</span>
+            <span class="strength-badge">Data-Driven Decisions</span>
+          </div>
+          <div class="col-md-6">
+            <h4 style="color: #444; font-weight: 600; margin-bottom: 15px;">Technical</h4>
+            <span class="strength-badge">GCP Cloud Infrastructure</span>
+            <span class="strength-badge">Data Architecture & BI</span>
+            <span class="strength-badge">Full Stack (Laravel, React)</span>
+            <span class="strength-badge">M365 Low-code</span>
+            <span class="strength-badge">Linux Administration</span>
+            <span class="strength-badge">Process Automation</span>
+          </div>
+        </div>
+
+        <hr style="margin: 40px 0; border-color: #e9ecef;">
+      
+        <div class="col-md-10 col-md-offset-2" style="padding-left: 25px;">
+          <h4 id="timelineTitle" style="font-size: 33px;">Experience & Education</h4>
+          <div class="timeline table-responsive">
+              <ul class="timeline">
+                <li>
+                  <a target="_blank" href="https://aconsa.com.mx/">IT Manager</a>
+                  <span class="float-right" style="font-style: italic;">March 2021 - Present | Aconsa</span>
+                  <p>I lead the IT area, supervising infrastructure, support, and the software development lifecycle. I design and consolidate the company data analysis architecture for executive decision-making. <br>
+                    • Migrated corporate services to Google Cloud Platform, achieving a 52% cost reduction.<br>
+                    • Increased team efficiency by implementing Kanban, improving delivery times by 30%.
+                  </p>
+                </li>
+                <li>
+                  <a target="_blank" href="https://aconsa.com.mx/">Full Stack Developer</a>
+                  <span class="float-right" style="font-style: italic;">June 2016 - March 2021 | Aconsa</span>
+                  <p>Led and participated in the development of key internal solutions, designing scalable architectures.<br>
+                    • <b>ERP:</b> Implemented a Laravel backend and a dynamic JS/TS frontend, integrating MariaDB, Redis, and Firebase.<br>
+                    • <b>CRM:</b> Developed with Microsoft 365 low-code tools (Power Apps, Power Automate, Power BI).<br>
+                    • Administered virtualized Linux environments and used Git/Docker for deployments.
+                  </p>
+                </li>
+                <li>
+                  <a href="#">Education & Certifications</a>
+                  <span class="float-right" style="font-style: italic;">2017 - 2026</span>
+                  <p>
+                    • <b>Certification:</b> Google Cloud Data Analytics (2026)<br>
+                    • <b>Diploma:</b> Data Visualization and Management with Google Cloud, UNAM DGTIC (2026)<br>
+                    • <b>Degree:</b> Computer Engineering, UNAM Faculty of Engineering (2017)
+                  </p>
+                </li>
+                <li>
+                  <a  target="_blank" href="https://es.foursquare.com/v/millward-brown-m%C3%A9xico/4d2de366ad3a8cfa3f1c8fbd/photos">Data Analyst</a>
+                  <span class="float-right" style="font-style: italic;">September 2015 - June 2016 | Millward Brown</span>
+                  <p>Automated data cleaning and transformation processes from DB2. Built executive reports using VBA.</p>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2" style="margin-top: 30px; padding-left: 25px;">
+          <h4 style="font-size: 33px;">Technical Skills</h4>
+          <div class="skills table-responsive" style="margin-top: 25px;">
+            <div class="dashboard">
+              GCP / Cloud
+              <p>
+                <svg>
+                  <circle class="bg" cx="57" cy="57" r="52" />
+                  <circle class="meter-1" cx="57" cy="57" r="52" />
+                </svg>
+              </p>
+              <p>Laravel / PHP
+                <svg>
+                  <circle class="bg" cx="57" cy="57" r="52" />
+                  <circle class="meter-2" cx="57" cy="57" r="52" />
+                </svg>
+              </p>
+              <p>JS / TS / React
+                <svg>
+                  <circle class="bg" cx="57" cy="57" r="52" />
+                  <circle class="meter-3" cx="57" cy="57" r="52" />
+                </svg>
+              </p>
+              <p>Python
+                <svg>
+                  <circle class="bg" cx="57" cy="57" r="52" />
+                  <circle class="meter-4" cx="57" cy="57" r="52" />
+                </svg>
+              </p>
+            </div>
+            <div class="dashboard">
+              <p>MariaDB / MySQL
+                <svg>
+                  <circle class="bg" cx="57" cy="57" r="52" />
+                  <circle class="meter-9" cx="57" cy="57" r="52" />
+                </svg>
+              </p>
+              <p>Redis
+                <svg>
+                  <circle class="bg" cx="57" cy="57" r="52" />
+                  <circle class="meter-5" cx="57" cy="57" r="52" />
+                </svg>
+              </p>
+              <p>M365 / Power BI
+                <svg>
+                  <circle class="bg" cx="57" cy="57" r="52" />
+                  <circle class="meter-6" cx="57" cy="57" r="52" />
+                </svg>
+              </p>
+              <p>Linux Admin
+                <svg>
+                  <circle class="bg" cx="57" cy="57" r="52" />
+                  <circle class="meter-7" cx="57" cy="57" r="52" />
+                </svg>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="background-color: #337ab7;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="js/aboutMe.js"></script>
+<script>
+  document.onreadystatechange = function () {
+      if (document.readyState !== "complete") {
+          document.querySelector(
+              "body").style.visibility = "hidden";
+          document.querySelector(
+              "#loader").style.visibility = "visible";
+      } else {
+          document.querySelector(
+              "#loader").style.display = "none";
+          document.querySelector(
+              "body").style.visibility = "visible";
+      }
+  };
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Noé Huerta - IT Manager & Full Stack Developer</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
