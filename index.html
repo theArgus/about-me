@@ -1,155 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>About me, about Noé Huerta</title>
+  <title>About Noé Huerta - IT Manager</title>
   <meta charset="utf-8">
-  <meta http-equiv='cache-control' content='no-cache'>
-  <meta http-equiv='expires' content='0'> 
-  <meta http-equiv='pragma' content='no-cache'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/me.css">
-  <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
   <div id="loader" class="center"></div>
 
-  <div class="container-fluid" style="margin: 0px;">
-    <div class="full-container" style="padding-left: 25px; padding-right: 25px;">
-      
-      <div class="row" style="margin-top: 50px;">
-        <div class="col-md-2">
-          <div class="form-group controls" style="margin-top: 35px; padding-right: 25px;">
-            <p><strong>Background Settings:</strong></p>
-            <div class="form-group">
-              Activate background: <input type="checkbox" onchange="getChecked()" id='check1'>
-            </div>
-            <div class="form-group">
-              Center sphere size: <input id="sizeS" type="range" min="0" value="22" max="1000" onblur="getSizeS()" class="slider">
-            </div>
-            <div class="form-group">
-              Spheres size: <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()" class="slider">
-            </div>
-            <div class="form-group">
-              Rotation: <input id="velocity" type="range" min="10" value="30" max="1000" onblur="getVelocity()" class="slider">
-            </div>
-            <div class="form-group">
-              Move in X: <input id="transX" type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
-            </div>
-            <div class="form-group">
-              Spheres count: <input id="getNumberS" type="number" min="0" value="13" max="52" onblur="getNumberS()" placeholder="13" class="form-control">
-            </div>
-          </div>
-        </div>
+  <div class="container-fluid">
+    <div class="row loader-controls">
+      <div class="col-xs-12 text-center">
+        <label><input type="checkbox" onchange="getChecked()" id='check1'> BG</label>
+        <label>Size: <input id="sizeS" type="range" min="0" value="22" max="1000" onblur="getSizeS()"></label>
+        <label>Spheres: <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()"></label>
+        <label>Rotation: <input id="velocity" type="range" min="10" value="30" max="1000" onblur="getVelocity()"></label>
+        <label>Qty: <input id="getNumberS" type="number" value="13" onblur="getNumberS()"></label>
+      </div>
+    </div>
 
-        <div class="col-md-10" style="margin-top: 15px;">
-          <div class="col-md-7">
-            <h1 class="main-name">Noé Huerta Macías</h1>
-            <h3 class="it-consultant">IT Manager & Full Stack Developer</h3>
-            <p style="margin-top: 10px;">
-              <i class="fa fa-envelope" style="margin-right: 7px;"></i> <a href='mailto:noeh@aconsamx.com'>noeh@aconsamx.com</a> <br>
-              <i class="fab fa-linkedin" style="margin-right: 7px;"></i> <a target="_blank" href="https://linkedin.com/in/noe-huertain">linkedin.com/in/noe-huertain</a>
-            </p>
-          </div>
-          <div class="col-md-10" style="margin-top: 2%;">
-            <p class="summary-text">
-              Computer Engineer with more than 10 years in software development and 4 years leading as an IT Manager. I structure data architecture and consolidate the implementation of digital solutions focused on Business Intelligence for strategic decision-making. I lead multidisciplinary teams and optimize Cloud infrastructure, internal processes, and corporate tools in the construction sector.
-            </p>
+    <div class="full-container">
+      <div class="row header-section">
+        <div class="col-md-10 col-md-offset-1">
+          <h1 class="name-title">Noé Huerta Macías</h1>
+          <p class="subtitle">IT Manager | Computer Engineer</p>
+          <div class="contact-info">
+            <span><i class="fa fa-envelope"></i> <a href="mailto:noeh@aconsamx.com">noeh@aconsamx.com</a></span>
+            <span><i class="fab fa-linkedin"></i> <a target="_blank" href="https://linkedin.com/in/noe-huertain">linkedin.com/in/noe-huertain</a></span>
           </div>
         </div>
       </div>
 
-      <div class="row section-margin">
-        <div class="col-md-10 col-md-offset-2">
-          <h2 class="professional-h2">Strengths</h2>
-          <div class="row">
-            <div class="col-md-5">
-              <h4 class="blue-title">Technical</h4>
-              <ul class="cv-list">
-                <li>Data architecture and BI solutions.</li>
-                <li>Cloud infrastructure design and optimization (GCP).</li>
-                <li>Full Stack (Laravel, JS/TS, Python, React, MariaDB, Redis, Firebase).</li>
-                <li>Low-code solutions integration (M365).</li>
-                <li>Process automation and operational efficiency.</li>
-                <li>Virtualization and Linux administration.</li>
-              </ul>
+      <div class="row content-section">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="summary-box">
+            <p>I am a Computer Engineer with more than 10 years in software development and 4 years leading as an IT Manager[cite: 4]. I structure data architecture and consolidate digital solutions focused on Business Intelligence for strategic decision-making[cite: 5].</p>
+          </div>
+
+          <div class="strengths-section">
+            <div class="row">
+              <div class="col-md-6">
+                <h3>Technical Strengths</h3>
+                <ul>
+                  <li>Data architecture and BI solutions [cite: 9]</li>
+                  <li>Cloud infrastructure design and optimization (GCP) [cite: 9]</li>
+                  <li>Full Stack development (Laravel, JS/TS, Python, React) [cite: 10]</li>
+                  <li>Process automation and standardization [cite: 12, 13]</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h3>Management Strengths</h3>
+                <ul>
+                  <li>Technical leadership and team coordination [cite: 20]</li>
+                  <li>Agile methodologies (Kanban) [cite: 21]</li>
+                  <li>IT strategic planning and digital transformation [cite: 22, 23]</li>
+                  <li>Executive communication [cite: 22]</li>
+                </ul>
+              </div>
             </div>
-            <div class="col-md-5">
-              <h4 class="blue-title">Management</h4>
-              <ul class="cv-list">
-                <li>Technical leadership and team coordination.</li>
-                <li>Agile methodologies (Kanban).</li>
-                <li>IT strategic planning aligned to business.</li>
-                <li>Executive communication.</li>
-                <li>Digital transformation and data-driven decision-making.</li>
-              </ul>
+          </div>
+
+          <div class="experience-section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+              <div class="exp-item">
+                <h4>IT Manager / Aconsa <small>2021 - Present</small></h4>
+                <p>Reduced costs by 52% through GCP migration and improved delivery times by 30% using Kanban[cite: 30, 31].</p>
+              </div>
+              <div class="exp-item">
+                <h4>Full Stack Developer / Aconsa <small>2016 - 2021</small></h4>
+                <p>Led development of key ERP and CRM solutions using Laravel and M365 low-code tools[cite: 35, 37, 38].</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="row section-margin">
-        <div class="col-md-10 col-md-offset-2">
-          <h2 class="professional-h2">Experience</h2>
-          <div class="timeline-container">
-            <div class="exp-item">
-              <span class="exp-date">March 2021 - Present | Aconsa</span>
-              <h4 class="exp-role">IT Manager</h4>
-              <p>I lead the IT area, supervising infrastructure and software development. Consolidated the company's data analysis architecture, enabling executive dashboards. Migrated services to GCP, achieving a 52% cost reduction. Implemented Kanban, improving delivery times by 30%.</p>
-            </div>
-            <div class="exp-item">
-              <span class="exp-date">June 2016 - March 2021 | Aconsa</span>
-              <h4 class="exp-role">Full Stack Developer</h4>
-              <p>Developed ERP and CRM systems. Implemented Laravel backend with JS/TS frontend. Managed virtualized Linux environments and coordinated integrations with corporate APIs.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row section-margin">
-        <div class="col-md-10 col-md-offset-2 freelance-box">
-          <h3 class="blue-title">Freelance Projects</h3>
-          <ul class="cv-list">
-            <li><strong>Food Retail Store:</strong> Online store with inventory management (React, React Native, Firebase, AWS S3, Stripe).</li>
-            <li><strong>WordPress:</strong> Development and refactoring of plugins for various industries.</li>
-            <li><strong>BI Solutions:</strong> Cloud solution for sales analysis in pet products business.</li>
-            <li><strong>Creative Coding:</strong> Visual pieces using JS, p5, and Processing.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="row section-margin" style="padding-bottom: 60px;">
-        <div class="col-md-10 col-md-offset-2">
-          <h2 class="professional-h2">Academic Achievements</h2>
-          <ul class="cv-list acad-list">
-            <li><strong>Google Cloud Data Analytics Certification</strong> (2026) - Google Skills</li>
-            <li><strong>Diploma / Data Visualization and Management with Google Cloud</strong> (2026) - UNAM, DGTIC</li>
-            <li><strong>Computer Engineering</strong> (2017) - Universidad Nacional Autónoma de México (UNAM)</li>
-            <li><strong>Diploma / Information Technologies Oracle</strong> (2016) - UNAM, Faculty of Engineering</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
   </div>
 
-<script src="js/aboutMe.js"></script>
-<script>
-  document.onreadystatechange = function () {
-      if (document.readyState !== "complete") {
-          document.querySelector("body").style.visibility = "hidden";
-          document.querySelector("#loader").style.visibility = "visible";
-      } else {
-          document.querySelector("#loader").style.display = "none";
-          document.querySelector("body").style.visibility = "visible";
-      }
-  };
-</script>
+  <script src="js/aboutMe.js"></script>
 </body>
 </html>
