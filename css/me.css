@@ -1,3 +1,25 @@
+/* Mantenemos el loader original con máxima prioridad */
+#loader {
+  border: 12px solid #f3f3f3 !important;
+  border-radius: 50% !important;
+  border-top: 12px solid #0d47a1 !important; /* Azul profesional */
+  width: 70px !important;
+  height: 70px !important;
+  animation: spin 1s linear infinite !important;
+  display: block !important; /* Asegura que sea visible al inicio */
+  z-index: 9999;
+}
+
+.center {
+  position: fixed; /* Cambiado a fixed para que se centre en toda la pantalla */
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
+}
+
+@keyframes spin { 
+  100% { transform: rotate(360deg); } 
+}
+
 /* Paleta de Colores: Azules y Blancos */
 :root {
   --primary-blue: #0d47a1;
