@@ -1,81 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>About Noé Huerta - IT Manager</title>
+  <title>Noé Huerta Macías - IT Manager & Consultant</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/me.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
   <div id="loader" class="center"></div>
 
   <div class="container-fluid">
-    <div class="row loader-controls">
-      <div class="col-xs-12 text-center">
-        <label><input type="checkbox" onchange="getChecked()" id='check1'> BG</label>
-        <label>Size: <input id="sizeS" type="range" min="0" value="22" max="1000" onblur="getSizeS()"></label>
-        <label>Spheres: <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()"></label>
-        <label>Rotation: <input id="velocity" type="range" min="10" value="30" max="1000" onblur="getVelocity()"></label>
-        <label>Qty: <input id="getNumberS" type="number" value="13" onblur="getNumberS()"></label>
-      </div>
-    </div>
-
     <div class="full-container">
+      
+      <div class="row" style="margin-top: 420px;"></div>
+
       <div class="row header-section">
-        <div class="col-md-10 col-md-offset-1">
-          <h1 class="name-title">Noé Huerta Macías</h1>
-          <p class="subtitle">IT Manager | Computer Engineer</p>
-          <div class="contact-info">
-            <span><i class="fa fa-envelope"></i> <a href="mailto:noeh@aconsamx.com">noeh@aconsamx.com</a></span>
-            <span><i class="fab fa-linkedin"></i> <a target="_blank" href="https://linkedin.com/in/noe-huertain">linkedin.com/in/noe-huertain</a></span>
+        <div class="col-md-2">
+          <div class="form-group controls">
+            <div class="form-group">
+              Activate the background color:
+              <input type="checkbox" onchange="getChecked()" id='check1'>
+            </div>
+            <div class="form-group">
+              Center sphere size:
+              <input id="sizeS" type="range" min="0" value="22" max="1000" onblur="getSizeS()" class="slider">
+            </div>
+            <div class="form-group">
+              Spheres size:
+              <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()" class="slider">
+            </div>
+            <div class="form-group">
+              Rotation:
+              <input id="velocity" type="range" min="10" value="30" max="1000" onblur="getVelocity()" class="slider">
+            </div>
+            <div class="form-group">
+              Move in X the spheres:
+              <input id="transX" type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
+            </div>
+            <div class="form-group">
+              How many spheres in the sketch:
+              <input id="getNumberS" type="number" min="0" value="13" max="52" onblur="getNumberS()" placeholder="13">
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="row content-section">
-        <div class="col-md-10 col-md-offset-1">
-          <div class="summary-box">
-            <p>I am a Computer Engineer with more than 10 years in software development and 4 years leading as an IT Manager[cite: 4]. I structure data architecture and consolidate digital solutions focused on Business Intelligence for strategic decision-making[cite: 5].</p>
+        <div class="col-md-10 content-body">
+          <div class="row">
+            <div class="col-md-8">
+              <h1 class="main-name">Noé Huerta Macías</h1>
+              <div class="job-title-container">
+                <h2 class="job-title">IT Manager & Consultant</h2>
+                <p class="contact-info">
+                  <i class="fa fa-envelope"></i> <a href='mailto:noeh@aconsa.com.mx'>noeh@aconsa.com.mx</a> | 
+                  <i class="fab fa-linkedin"></i> <a target="_blank" href="https://www.linkedin.com/in/noe-huerta">linkedin.com/in/noe-huerta</a>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="tag-cloud">
+                <span>#BusinessIntelligence</span>
+                <span>#ProjectLeadership</span>
+                <span>#AgileMethodologies</span>
+                <span>#FullStackDev</span>
+                <span>#CloudInfrastructure</span>
+              </div>
+            </div>
           </div>
 
-          <div class="strengths-section">
-            <div class="row">
-              <div class="col-md-6">
-                <h3>Technical Strengths</h3>
-                <ul>
-                  <li>Data architecture and BI solutions [cite: 9]</li>
-                  <li>Cloud infrastructure design and optimization (GCP) [cite: 9]</li>
-                  <li>Full Stack development (Laravel, JS/TS, Python, React) [cite: 10]</li>
-                  <li>Process automation and standardization [cite: 12, 13]</li>
-                </ul>
-              </div>
-              <div class="col-md-6">
-                <h3>Management Strengths</h3>
-                <ul>
-                  <li>Technical leadership and team coordination [cite: 20]</li>
-                  <li>Agile methodologies (Kanban) [cite: 21]</li>
-                  <li>IT strategic planning and digital transformation [cite: 22, 23]</li>
-                  <li>Executive communication [cite: 22]</li>
+          <div class="row summary-section">
+            <div class="col-md-12">
+              <p class="lead-text">
+                Computer Engineer with over 10 years of experience in software development and 4 years leading IT departments. 
+                Expert in digital transformation for the AEC industry, implementing agile methodologies and high-scale cloud solutions.
+              </p>
+            </div>
+          </div>
+
+          <hr class="blue-divider">
+
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="section-title">Professional Experience</h3>
+              <div class="timeline">
+                <ul class="timeline-list">
+                  <li>
+                    <div class="timeline-header">
+                      <strong>Information Technology Manager</strong>
+                      <span class="date-tag">May 2021 - Present | Aconsa</span>
+                    </div>
+                    <p>Leadership of multidisciplinary teams in software development and infrastructure. Strategic implementation of cloud migrations (GCP) and cybersecurity protocols. Managed SaaS solutions and business intelligence workflows.</p>
+                  </li>
+                  <li>
+                    <div class="timeline-header">
+                      <strong>Full Stack Developer</strong>
+                      <span class="date-tag">Jun 2016 - May 2021 | Aconsa</span>
+                    </div>
+                    <p>Development of ERP systems using Laravel, PHP, and JavaScript. Management of Linux/Windows servers, database design (MySQL/Redis), and automation via Bash scripting.</p>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="experience-section">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="timeline">
-              <div class="exp-item">
-                <h4>IT Manager / Aconsa <small>2021 - Present</small></h4>
-                <p>Reduced costs by 52% through GCP migration and improved delivery times by 30% using Kanban[cite: 30, 31].</p>
-              </div>
-              <div class="exp-item">
-                <h4>Full Stack Developer / Aconsa <small>2016 - 2021</small></h4>
-                <p>Led development of key ERP and CRM solutions using Laravel and M365 low-code tools[cite: 35, 37, 38].</p>
+          <div class="row skills-section">
+            <div class="col-md-12">
+              <h3 class="section-title">Technical Skills</h3>
+              <div class="skills-grid">
+                <div class="skill-item">
+                  <svg><circle class="bg" cx="57" cy="57" r="52"/><circle class="meter-1" cx="57" cy="57" r="52"/></svg>
+                  <span>PHP / Laravel</span>
+                </div>
+                <div class="skill-item">
+                  <svg><circle class="bg" cx="57" cy="57" r="52"/><circle class="meter-2" cx="57" cy="57" r="52"/></svg>
+                  <span>JS / React</span>
+                </div>
+                <div class="skill-item">
+                  <svg><circle class="bg" cx="57" cy="57" r="52"/><circle class="meter-4" cx="57" cy="57" r="52"/></svg>
+                  <span>Python / GCP</span>
+                </div>
+                <div class="skill-item">
+                  <svg><circle class="bg" cx="57" cy="57" r="52"/><circle class="meter-9" cx="57" cy="57" r="52"/></svg>
+                  <span>SQL / Redis</span>
+                </div>
               </div>
             </div>
           </div>
@@ -85,5 +138,16 @@
   </div>
 
   <script src="js/aboutMe.js"></script>
+  <script>
+    document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+            document.querySelector("body").style.visibility = "hidden";
+            document.querySelector("#loader").style.visibility = "visible";
+        } else {
+            document.querySelector("#loader").style.display = "none";
+            document.querySelector("body").style.visibility = "visible";
+        }
+    };
+  </script>
 </body>
 </html>
