@@ -1,156 +1,336 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Noé Huerta Macías - IT Manager & Consultant</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/me.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
+<html lang="en">
+
+<head>
+
+  <title>About me, about Noé Huerta</title>
+
+  <meta charset="utf-8">
+
+  <meta http-equiv='cache-control' content='no-cache'>
+
+  <meta http-equiv='expires' content='0'> 
+
+  <meta http-equiv='pragma' content='no-cache'>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="css/me.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
+
 <body>
+
   <div id="loader" class="center"></div>
 
-  <div class="container-fluid">
-    <div class="full-container">
-      
-      <div class="row" style="margin-top: 420px;"></div>
 
-      <div class="row header-section">
-        <div class="col-md-2">
-          <div class="form-group controls">
-            <div class="form-group">
-              Activate the background color:
-              <input type="checkbox" onchange="getChecked()" id='check1'>
-            </div>
-            <div class="form-group">
-              Center sphere size:
-              <input id="sizeS" type="range" min="0" value="22" max="1000" onblur="getSizeS()" class="slider">
-            </div>
-            <div class="form-group">
-              Spheres size:
-              <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()" class="slider">
-            </div>
-            <div class="form-group">
-              Rotation:
-              <input id="velocity" type="range" min="10" value="30" max="1000" onblur="getVelocity()" class="slider">
-            </div>
-            <div class="form-group">
-              Move in X the spheres:
-              <input id="transX" type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
-            </div>
-            <div class="form-group">
-              How many spheres in the sketch:
-              <input id="getNumberS" type="number" min="0" value="13" max="52" onblur="getNumberS()" placeholder="13">
-            </div>
-          </div>
-        </div>
 
-        <div class="col-md-10 content-body">
-          <div class="row">
-            <div class="col-md-8">
-              <h1 class="main-name">Noé Huerta Macías</h1>
-              <div class="job-title-container">
-                <h2 class="job-title">IT Manager & Consultant</h2>
-                <p class="contact-info">
-                  <i class="fa fa-envelope"></i> <a href='mailto:noeh@aconsa.com.mx'>noeh@aconsa.com.mx</a> | 
-                  <i class="fab fa-linkedin"></i> <a target="_blank" href="https://www.linkedin.com/in/noe-huerta">linkedin.com/in/noe-huerta</a>
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="tag-cloud">
-                <span>#BusinessIntelligence</span>
-                <span>#ProjectLeadership</span>
-                <span>#AgileMethodologies</span>
-                <span>#FullStackDev</span>
-                <span>#CloudInfrastructure</span>
-              </div>
-            </div>
-          </div>
+  <div class="container-fluid" style="margin: 0px;">
 
-          <div class="row summary-section">
-            <div class="col-md-12">
-              <p class="lead-text">
-                Computer Engineer with over 10 years of experience in software development and 4 years leading IT departments. 
-                Expert in digital transformation for the AEC industry, implementing agile methodologies and high-scale cloud solutions.
-              </p>
-            </div>
-          </div>
+    <div class="full-container" style="padding-left: 25px; padding-right: 25px;">
 
-          <hr class="blue-divider">
+      <div class="row" style="margin-top: 420px;">
 
-          <div class="row">
-            <div class="col-md-12">
-              <h3 class="section-title">Professional Experience</h3>
-              <div class="timeline">
-                <ul class="timeline-list">
-                  <li>
-                    <div class="timeline-header">
-                      <strong>Information Technology Manager</strong>
-                      <span class="date-tag">May 2021 - Present | Aconsa</span>
-                    </div>
-                    <p>Leadership of multidisciplinary teams in software development and infrastructure. Strategic implementation of cloud migrations (GCP) and cybersecurity protocols. Managed SaaS solutions and business intelligence workflows.</p>
-                  </li>
-                  <li>
-                    <div class="timeline-header">
-                      <strong>Full Stack Developer</strong>
-                      <span class="date-tag">Jun 2016 - May 2021 | Aconsa</span>
-                    </div>
-                    <p>Development of ERP systems using Laravel, PHP, and JavaScript. Management of Linux/Windows servers, database design (MySQL/Redis), and automation via Bash scripting.</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="row skills-section">
-            <div class="col-md-12">
-              <h3 class="section-title">Technical Skills</h3>
-              <div class="skills-grid">
-                <div class="skill-item">
-                  <svg><circle class="bg" cx="57" cy="57" r="52"/><circle class="meter-1" cx="57" cy="57" r="52"/></svg>
-                  <span>PHP / Laravel</span>
-                </div>
-                <div class="skill-item">
-                  <svg><circle class="bg" cx="57" cy="57" r="52"/><circle class="meter-2" cx="57" cy="57" r="52"/></svg>
-                  <span>JS / React</span>
-                </div>
-                <div class="skill-item">
-                  <svg><circle class="bg" cx="57" cy="57" r="52"/><circle class="meter-4" cx="57" cy="57" r="52"/></svg>
-                  <span>Python / GCP</span>
-                </div>
-                <div class="skill-item">
-                  <svg><circle class="bg" cx="57" cy="57" r="52"/><circle class="meter-9" cx="57" cy="57" r="52"/></svg>
-                  <span>SQL / Redis</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+
+      <div class="row">
+
+        <div class="form-group" style="margin-top: 25px;">
+
+          <div class="col-md-2">
+
+            <div class="form-group controls" style="margin-top: 35px; padding-right: 25px;">
+
+              <div class="form-group">
+
+                Activate the background color:
+
+                <input type="checkbox" onchange="getChecked()" id='check1'>
+
+              </div>
+
+              <div class="form-group">
+
+                Center sphere size:
+
+                <input id="sizeS"  type="range" min="0" value="22" max="1000" onblur="getSizeS()" class="slider">
+
+              </div>
+
+              <div class="form-group">
+
+                Spheres size:
+
+              <input id="sizeSs" value="15" type="range" min="1" max="100" onblur="getValss()" class="slider">
+
+              </div>
+
+              <div class="form-group">
+
+                Rotation:
+
+                <input id="velocity"  type="range" min="10" value="30" max="1000" onblur="getVelocity()" class="slider">
+
+              </div>
+
+              <div class="form-group">
+
+                Move in X the spheres:
+
+                <input id="transX"  type="range" min="-10" value="0" max="10" onblur="getTransX()" class="slider">
+
+              </div>
+
+              <div class="form-group">
+
+                How many spheres in the sketch:
+
+                <input id="getNumberS"  type="number" min="0" value="13" max="52" onblur="getNumberS()" placeholder="13">
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-10" style="margin-top: 15px;">
+
+            <div class="col-md-7">
+
+              <div class="table-responsive" >
+
+                <h4 class="typewriter">Noé Huerta Macías</h4>
+
+                <!--img src="/about-me/images/1591739350.jpg" width="250px" height="250px"-->
+
+              </div>
+
+              <div class="myresume typewriter table-responsive" style="margin-top: 25px;">
+
+                <p class="typewriter" style="color: #337ab7; font-size: 21px;">IT Consultant</p>
+
+                <p style="margin-top: 5px;;">
+
+                  <i class="fa fa-envelope" style="margin-right: 7px;"></i> <a href='mailto:noeh@aconsa.com.mx'>Contact me</a> <br>
+
+                  <i class="fa fa-link" style="margin-right: 7px;"></i> <a target="_blank" href="https://www.linkedin.com/in/noe-huerta" style="cursor: pointer;"> www.linkedin.com/in/noe-huerta</a>
+
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="col-md-3" style="margin-top: 25px;;">
+
+              <p class="typewriter" style="text-align: right; font-size: small; ">
+
+                <b>#businessIntelligence</b><br>
+
+                <b>#projectLeadership</b><br>
+
+                <b>#agileMethodologies</b><br>
+
+                <b>#fullStackDev </b><br>
+
+                <b>#techPassionate #creativityMind</b><br>
+
+                <b>#engineering #technology #dev</b><br>
+
+              </p>
+
+            </div>
+
+            <div class="col-md-10" style="margin-top: 2%;">
+
+              <!--h4 style="font-size: 33px;">Summary</h4><-->
+
+              <p style="text-align: justify;">
+
+                Hello! <br>
+
+                I'm a Computer Engineer and a formal developer since 2014. I started to develop solutions for AEC industry since 2016 like full stack developer and I have leader some projects since 2021 like IT Manager.<br>
+
+                I have experience comproved leading multidisciplinary teams with agile methodology.<br>
+
+                Good skills for customer relationships, sales and well team player.<br>
+
+                Since I have 10 years old I have been a tech passionate, so I think I am lucky guy who do what it likes. I hope to get new chalenges soon.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-2" style="background-color: #337ab7;">
+
+            <div id="columnsContainer">
+
+              <!-- Box -->
+
+              <div class="box-container">
+
+                <div class="box-container2">
+
+                </div>
+
+              </div>
+
+              <!-- Shadow
+
+              <div class="shadow">CSS is FUN!</div> -->
+
+            </div>
+
+        </div>
+
+        <div class="col-md-10 col-md-offset-2" style="padding-left: 25px;">
+
+          <h4 id="timelineTitle" style="font-size: 33px;">Expirience</h4>
+
+          <div class="timeline table-responsive">
+
+              <ul class="timeline">
+
+                <li>
+
+                  <a target="_blank" href="https://aconsa.com.mx/">Information Technology Manager</a>
+
+                  <span class="float-right" style="font-style: italic;">May 2021, Present | Aconsa</span>
+
+                  <p>Management of the IT group, that develop solutions technology, realize maintenance of the infrastructure, provide security devices maintenance and support for a build supervisor company.<br>
+
+                    Planning, executing and reporting on IT operations and mentoring new collaborative techs implementation with agile methodologies.<br>
+
+                    Manage customer services for SaaS solutions.<br>
+
+                    Project leadership for multidisciplinary teams.
+
+                  </p>
+
+                </li>
+
+                <li>
+
+                  <a target="_blank" href="https://aconsa.com.mx/">Full Stack Developer</a>
+
+                  <span class="float-right" style="font-style: italic;">Jun 2016, May 2021 | Aconsa</span>
+
+                  <p>Management of Linux and Windows servers. Bash, Scripting, Virtualization, Apache modules, NGINX.<br>
+
+                    Development of ERP with Laravel/PHP Javascript.<br>
+
+                    Linux servers administration.<br>
+
+                    Design and management of databases with MySQL and Redis.<br>
+
+                    Open source tools adaptation to business processes.
+
+                  </p>
+
+                </li>
+
+                <li>
+
+                  <a href="#"> I graduated of Computer Engineer</a>
+
+                  <span class="float-right" style="font-style: italic;">August, 2016 | Education</span>
+
+                  <p><b>Universidad Nacional Autónoma de México</b>, UNAM. Faculty of Engineering. <br>
+
+                    Certified in Information Technologies Oracle. [Jan-July 2016] </p>
+
+                </li>
+
+                <li>
+
+                  <a  target="_blank" href="https://es.foursquare.com/v/millward-brown-m%C3%A9xico/4d2de366ad3a8cfa3f1c8fbd/photos">Data Analyst</a>
+
+                  <span class="float-right" style="font-style: italic;">Nov 2015, July 2016 | Millward Brown México</span>
+
+                  <p>I worked with DB2 database and developed macros to get the analysis of the data got by surveys of a marketing company.</p>
+
+                </li>
+
+                <li>
+
+                  <a target="_blank" href="http://www.perezdelapena.com/">First work in a corporate</a>
+
+                  <span class="float-right" style="font-style: italic;">Jan 2013, Jul 2014 | Pérez de la Peña y Asociados</span>
+
+                  <p>I worked providing technical support for a law firm, that gave me social skills to treat with clients.</p>
+
+                </li>
+
+              </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
     </div>
+
   </div>
-  
+
+
+
 <script src="js/aboutMe.js"></script>
-  <script>
-    document.querySelector("#loader").style.visibility = "visible";
-    
-    document.onreadystatechange = function () {
-        if (document.readyState !== "complete") {
-            document.querySelector("body").style.visibility = "hidden";
-            document.querySelector("#loader").style.visibility = "visible";
-        } else {
-            document.querySelector("#loader").style.display = "none";
-            document.querySelector("body").style.visibility = "visible";
-        }
-    };
-  </script>
-  
+
+<script>
+
+  document.onreadystatechange = function () {
+
+      if (document.readyState !== "complete") {
+
+          document.querySelector(
+
+              "body").style.visibility = "hidden";
+
+          document.querySelector(
+
+              "#loader").style.visibility = "visible";
+
+      } else {
+
+          document.querySelector(
+
+              "#loader").style.display = "none";
+
+          document.querySelector(
+
+              "body").style.visibility = "visible";
+
+      }
+
+  };
+
+</script>
+
 </body>
+
 </html>
