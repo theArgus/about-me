@@ -137,17 +137,23 @@
     </div>
   </div>
 
-  <script src="js/aboutMe.js"></script>
   <script>
+    // Forzamos la visibilidad del loader apenas el script carga
+    document.querySelector("#loader").style.visibility = "visible";
+  
     document.onreadystatechange = function () {
+        const loader = document.querySelector("#loader");
+        const body = document.querySelector("body");
+  
         if (document.readyState !== "complete") {
-            document.querySelector("body").style.visibility = "hidden";
-            document.querySelector("#loader").style.visibility = "visible";
+            body.style.visibility = "hidden";
+            loader.style.display = "block";
         } else {
-            document.querySelector("#loader").style.display = "none";
-            document.querySelector("body").style.visibility = "visible";
+            loader.style.display = "none";
+            body.style.visibility = "visible";
         }
     };
   </script>
+  
 </body>
 </html>
