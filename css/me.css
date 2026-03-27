@@ -1,116 +1,189 @@
-/* 4. Estilo Profesional (Azul y Blanco) */
-body {
-  font-family: 'Inter', sans-serif;
-  color: #333;
-  background-color: #ffffff;
-  line-height: 1.6;
+/* Paleta de Colores: Azules y Blancos */
+:root {
+  --primary-blue: #0d47a1;
+  --secondary-blue: #1976d2;
+  --light-blue: #e3f2fd;
+  --dark-text: #2c3e50;
+  --light-gray: #f8f9fa;
+  --white: #ffffff;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--dark-text);
+  background-color: var(--white);
+}
+
+.full-container {
+  background-color: var(--white);
+  padding: 0 40px;
+}
+
+/* LOADER - Se mantiene TAL CUAL */
 #loader {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #1a3a5f;
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #444444;
   width: 70px;
   height: 70px;
+  animation: spin 1s linear infinite;
 }
 
-/* 2. Sección de controles ajustada */
-.loader-controls {
-  background: #f8f9fa;
-  border-bottom: 1px solid #e1e4e8;
-  padding: 10px 0;
-  font-size: 12px;
-  color: #666;
+.center {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
 }
 
-.loader-controls label {
-  margin: 0 15px;
-  font-weight: 400;
-}
+@keyframes spin { 100% { transform: rotate(360deg); } }
 
-.header-section {
-  background-color: #1a3a5f; /* Azul Profesional */
-  color: white;
-  padding: 60px 0;
-  text-align: center;
-}
-
-.name-title {
-  font-weight: 700;
-  font-size: 3.5rem;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  opacity: 0.9;
-  letter-spacing: 1px;
-}
-
-.contact-info a {
-  color: #4da3ff;
-  margin: 0 10px;
-}
-
-.content-section {
-  padding: 40px 0;
-}
-
-.summary-box {
-  font-size: 1.2rem;
-  border-left: 5px solid #1a3a5f;
-  padding-left: 20px;
-  margin-bottom: 40px;
-}
-
-/* 3. Estilo de Fortalezas */
-.strengths-section {
-  background: #f0f4f8;
-  padding: 30px;
+/* CONTROLES - Se respeta posición y tamaño */
+.controls {
+  margin-top: 35px;
+  padding: 15px;
+  background-color: var(--light-gray);
   border-radius: 8px;
-  margin-bottom: 40px;
+  font-size: 13px;
+  border-left: 4px solid var(--primary-blue);
 }
 
-.strengths-section h3 {
-  color: #1a3a5f;
-  font-size: 1.4rem;
-  border-bottom: 2px solid #cbd5e0;
-  padding-bottom: 10px;
+/* TIPOGRAFÍA Y ENFASIS */
+.main-name {
+  font-weight: 700;
+  font-size: 48px;
+  color: var(--primary-blue);
+  margin-bottom: 5px;
+  letter-spacing: -1px;
 }
 
-.strengths-section ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.strengths-section li:before {
-  content: "✓";
-  color: #1a3a5f;
-  margin-right: 10px;
-  font-weight: bold;
+.job-title {
+  font-weight: 300;
+  font-size: 24px;
+  color: var(--secondary-blue);
+  margin-top: 0;
 }
 
 .section-title {
-  color: #1a3a5f;
-  text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 28px;
   font-weight: 700;
+  color: var(--primary-blue);
   margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.exp-item {
+.lead-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  margin: 20px 0;
+}
+
+.blue-divider {
+  border-top: 2px solid var(--light-blue);
+  margin: 40px 0;
+}
+
+/* TAGS */
+.tag-cloud {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.tag-cloud span {
+  display: inline-block;
+  background: var(--light-blue);
+  color: var(--primary-blue);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 3px;
+}
+
+/* TIMELINE PROFESIONAL */
+.timeline-list {
+  list-style: none;
+  padding-left: 20px;
+  border-left: 3px solid var(--light-blue);
+}
+
+.timeline-list li {
   margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
+  position: relative;
 }
 
-.exp-item h4 {
-  color: #2c5282;
-  font-weight: 700;
+.timeline-list li::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: var(--secondary-blue);
+  border-radius: 50%;
 }
 
-.exp-item small {
-  float: right;
-  color: #718096;
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
-/* 5. Eliminada sección de habilidades circulares por solicitud */
+.date-tag {
+  font-size: 14px;
+  background: var(--light-gray);
+  padding: 2px 10px;
+  border-radius: 4px;
+  color: #666;
+}
+
+/* SKILLS GRID */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.skill-item {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.skill-item span {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* SVG METER - Ajuste de Colores a la paleta azul */
+svg { width: 100px; height: 100px; }
+.bg { fill: none; stroke-width: 8px; stroke: #eee; }
+[class^="meter-"] {
+  fill: none; stroke-width: 8px; stroke-linecap: round;
+  transform: rotate(-90deg); transform-origin: 50% 50%;
+}
+
+.meter-1, .meter-2, .meter-4, .meter-9 { stroke: var(--primary-blue); }
+
+/* Eliminación de animaciones Typewriter y efectos 3D */
+.typewriter {
+  animation: none !important;
+  white-space: normal !important;
+  border: none !important;
+}
+
+.box-container, .box-container2, .shadow {
+  display: none; /* Eliminado para look profesional */
+}
+
+@media (max-width: 768px) {
+  .main-name { font-size: 32px; }
+  .tag-cloud { text-align: left; }
+  .timeline-header { flex-direction: column; align-items: flex-start; }
+}
